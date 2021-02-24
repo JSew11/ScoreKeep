@@ -13,5 +13,6 @@ public class ScoreKeep {
      * @param args String array of arguments
      */
     public static void main(String[] args){
+        PitcherStats ps = new PitcherStats("JSewardStats.txt");
     }
 }

@@ -1,11 +1,11 @@
+import java.util.ArrayList;
+
 /**
  * Class representation of a batter
  *
  * @author Joshua Seward
  * @version 1.0
  */
-
-import java.util.ArrayList;
 
 public class Batter extends Player{
     private ArrayList<Integer> positions;
@@ -36,10 +36,11 @@ public class Batter extends Player{
      * Method that checks if a position is valid for a batter
      * and adds it to the batter's list of positions if it is
      *
-     * @param pos - batter's position
+     * @param pos - batter's position (2-9 are standard baseball
+     *            position numbering and 10 represents a DH)
      */
     public void addPosition(int pos){
-        if(pos == 0 || (pos > 1 && pos < 10))
+        if(pos > 1 && pos < 11)
             positions.add(new Integer(pos));
     }
 }
