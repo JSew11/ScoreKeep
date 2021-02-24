@@ -13,6 +13,6 @@ public class ScoreKeep {
      * @param args String array of arguments
      */
     public static void main(String[] args){
-
+        BaseballPlayer jS = new BaseballPlayer();
     }
 }

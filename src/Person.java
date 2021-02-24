@@ -10,35 +10,8 @@ public class Person {
     private String first_name;
     private String last_name;
 
-    /**
-     * Constructor for a generic person object
-     */
-    public Person(){
-        age = -1;
-        last_name = "Last";
-        first_name = "First";
-    }
-
-    /**
-     * Constructor for a person object with a specific name and age
-     *
-     * @param age
-     * @param last_name
-     * @param first_name
-     */
-    public Person(int age, String last_name, String first_name) {
-        this.age = age;
-        this.last_name = last_name;
-        this.first_name = first_name;
-    }
-
-    /**
-     * @return gives the full name as a string (last, first)
-     */
-    public String fullName(){
-        String full_name = last_name + ", " + first_name;
-        return full_name;
-    }
+    /** @return gives the full name as a string (last, first) */
+    public String fullName(){ return last_name + ", " + first_name;}
 
     /** @return gives age */
     public int getAge(){ return age;}
