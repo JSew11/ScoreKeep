@@ -13,7 +13,7 @@ public class Person {
     /**
      * Constructor for a generic person object
      */
-    Person(){
+    public Person(){
         age = -1;
         last_name = "Last";
         first_name = "First";
@@ -26,7 +26,7 @@ public class Person {
      * @param last_name
      * @param first_name
      */
-    Person(int age, String last_name, String first_name) {
+    public Person(int age, String last_name, String first_name) {
         this.age = age;
         this.last_name = last_name;
         this.first_name = first_name;
