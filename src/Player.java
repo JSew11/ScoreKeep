@@ -2,14 +2,38 @@
  * Class representation of a person
  *
  * @author Joshua Seward
- * @version 1.1
+ * @version 1.0
  */
 
 public class Player {
     private int age;
-    private String first_name;
     private String last_name;
+    private String first_name;
     public int number;
+
+    /**
+     * Constructor for a generic player
+     */
+    public Player(){
+        age = -1;
+        last_name = "Last";
+        first_name = "First";
+        number = -1;
+    }
+    /**
+     * Constructor for a specific player
+     *
+     * @param age - age for the player
+     * @param last_name - last name for the player
+     * @param first_name - first name for the player
+     * @param number - number for the player
+     */
+    public Player(int age, String last_name, String first_name, int number){
+        this.age = age;
+        this.last_name = last_name;
+        this.first_name = first_name;
+        this.number = number;
+    }
 
     /**
      * Getter for the player's age

@@ -8,22 +8,17 @@
 import java.util.ArrayList;
 
 public class Batter extends Player{
-    private int number;
     private ArrayList<Integer> positions;
 
     /**
-     * Constructor for a generic batter object
+     * Constructor for a generic batter
      */
     public Batter(){
-        setAge(-1);
-        setLast("Last");
-        setFirst("First");
-        number = -1;
+        super();
         positions = new ArrayList<Integer>();
     }
-
     /**
-     * Constructor for a specific batter object
+     * Constructor for a specific batter
      *
      * @param age - batter's age
      * @param last_name - batter's last name
@@ -32,11 +27,9 @@ public class Batter extends Player{
      */
     public Batter(int age, String last_name, String first_name,
                   int number, int pos){
-        setAge(age);
-        setLast(last_name);
-        setFirst(first_name);
-        this.number = number;
-        addPosition(pos);
+        super(age, last_name, first_name, number);
+        positions = new ArrayList<Integer>();
+        positions.add(new Integer(pos));
     }
 
     /**
@@ -46,14 +39,7 @@ public class Batter extends Player{
      * @param pos - batter's position
      */
     public void addPosition(int pos){
-        if(pos > 1 && pos < 11)
+        if(pos == 0 || (pos > 1 && pos < 10))
             positions.add(new Integer(pos));
     }
-
-    /**
-     * Getter for the batter's number
-     *
-     * @return - gives batter's number
-     */
-    public int getNumber(){ return number;}
 }
