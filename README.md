@@ -1,6 +1,7 @@
 # ScoreKeep Version 1.0
 ## Created by Joshua Seward
 
+### General Idea
 Create a fully functioning score/stat-keeping program that works for multiple different sports.
 
 ### Baseball Stat-Keeping
