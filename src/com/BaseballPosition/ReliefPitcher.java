@@ -5,7 +5,7 @@ package com.BaseballPosition;
  *
  * @author - Joshua Seward
  * @version - 1.0.0
- * @since - May, 8 2021
+ * @since - May 8, 2021
  */
 public class ReliefPitcher extends Pitcher {
     /**
