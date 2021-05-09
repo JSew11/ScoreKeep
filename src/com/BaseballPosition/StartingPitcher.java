@@ -9,10 +9,10 @@ package com.BaseballPosition;
  */
 public class StartingPitcher extends Pitcher{
     /**
-     * Method that gives the String representation of a
+     * Method that gives the String representation of
      * starting pitcher
      *
-     * @return - String representation of a starting pitcher
+     * @return - String representation of starting pitcher
      */
     @Override
     public String toString() {return "SP";}

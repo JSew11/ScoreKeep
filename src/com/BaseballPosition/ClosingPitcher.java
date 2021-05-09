@@ -9,10 +9,10 @@ package com.BaseballPosition;
  */
 public class ClosingPitcher extends ReliefPitcher {
     /**
-     * Method that gives String representation of a
+     * Method that gives String representation of
      * closing pitcher
      *
-     * @return - String representation of a closing
+     * @return - String representation of closing
      *           pitcher
      */
     @Override

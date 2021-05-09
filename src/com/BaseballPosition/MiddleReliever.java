@@ -10,10 +10,10 @@ package com.BaseballPosition;
  */
 public class MiddleReliever extends ReliefPitcher {
     /**
-     * Method that gives the String representation of a
+     * Method that gives the String representation of
      * long relief pitcher
      *
-     * @return - String representation of a middle relief
+     * @return - String representation of middle relief
      *           pitcher
      */
     @Override

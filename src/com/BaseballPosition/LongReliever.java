@@ -9,7 +9,7 @@ package com.BaseballPosition;
  */
 public class LongReliever extends ReliefPitcher{
     /**
-     * Method to give a String representation of a long relief
+     * Method to give a String representation of long relief
      * pitcher
      *
      * @return - String representation of long relief pitcher

@@ -9,10 +9,10 @@ package com.BaseballPosition;
  */
 public class SetupMan extends ReliefPitcher {
     /**
-     * Method that gives a String representation of a setup
+     * Method that gives a String representation of setup
      * relief pitcher
      *
-     * @return - String representation of a setup relief
+     * @return - String representation of setup relief
      *           pitcher
      */
     @Override
