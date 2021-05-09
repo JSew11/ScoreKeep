@@ -70,9 +70,5 @@ public class BaseballPlayer extends Athlete {
      *
      * @param position - BaseballPosition to remove from the ArrayList
      */
-    public void removeSecondary_position(BaseballPosition position) {
-        for (int i = 0; i < secondary_positions.size(); ++i)
-            if (position.compareTo(secondary_positions.get(i)) == 0)
-                secondary_positions.remove(i);
-    }
+    public void removeSecondary_position(BaseballPosition position) {secondary_positions.remove(position);}
 }
