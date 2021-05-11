@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * A class for a baseball player
  *
  * @author - Joshua Seward
- * @version - 1.0.0
+ * @version - 1.0.1
  * @since - May 8, 2021
  */
 public class BaseballPlayer extends Athlete {
@@ -30,6 +30,7 @@ public class BaseballPlayer extends Athlete {
     public BaseballPlayer(String first_name, String last_name, int number, BaseballPosition position) {
         super(first_name, last_name, number);
         primary_position = position;
+        secondary_positions = new ArrayList<BaseballPosition>();
     }
 
     /**
@@ -58,10 +59,14 @@ public class BaseballPlayer extends Athlete {
      * BaseballPositions
      *
      * @param position - BaseballPosition to add to the ArrayList
+     * @return - Whether the position was added correctly
      */
-    public void addSecondary_position(BaseballPosition position) {
-        if(!secondary_positions.contains(position) && position.compareTo(primary_position) == 0)
+    public boolean addSecondary_position(BaseballPosition position) {
+        if(!secondary_positions.contains(position) && position.compareTo(primary_position) != 0) {
             secondary_positions.add(position);
+            return true;
+        }
+        return false;
     }
 
     /**
