@@ -5,12 +5,13 @@ import java.util.ArrayList;
  * A class for a baseball player
  *
  * @author - Joshua Seward
- * @version - 1.0.1
+ * @version - 1.1.0
  * @since - May 8, 2021
  */
 public class BaseballPlayer extends Athlete {
     private BaseballPosition primary_position;
     private ArrayList<BaseballPosition> secondary_positions;
+    private BaseballPlayerStats stats;
 
     /**
      * Constructor for a basic BaseballPlayer object
@@ -31,6 +32,7 @@ public class BaseballPlayer extends Athlete {
         super(first_name, last_name, number);
         primary_position = position;
         secondary_positions = new ArrayList<BaseballPosition>();
+        stats = new BaseballPlayerStats(first_name + last_name);
     }
 
     /**
@@ -76,4 +78,14 @@ public class BaseballPlayer extends Athlete {
      * @param position - BaseballPosition to remove from the ArrayList
      */
     public void removeSecondary_position(BaseballPosition position) {secondary_positions.remove(position);}
+
+    /**
+     * Method to update all of the player's stats files
+     *
+     * @return - boolean value representing whether the files were
+     *           updated successfully
+     */
+    public boolean updateStats(){
+        return stats.updateStats();
+    }
 }
