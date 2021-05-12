@@ -5,7 +5,7 @@ import java.util.*;
  * A class for commonly recorded pitching stats
  *
  * @author - Joshua Seward
- * @version - 1.0.0
+ * @version - 1.1.0
  * @since - May 11, 2021
  */
 public class PitchingStats {
@@ -20,7 +20,7 @@ public class PitchingStats {
     // object to calculate more complex stats
     private PitchingCalc pitchingCalc;
     // PitchingStats input/output file name
-    private String statsFileName;
+    private String statsFilePath;
 
     /**
      * Constructor to instantiate the stored values for each statistic based
@@ -29,10 +29,13 @@ public class PitchingStats {
      * @param statsFileName - name of the file containing pitching statistics
      */
     public PitchingStats(String statsFileName) {
-        this.statsFileName = statsFileName;
+        // create the path to the pitching stats file
+        String os = System.getProperty("os.name");
+        if(os.contains("Windows")) statsFilePath = "..\\\\baseballStats\\\\" + statsFileName;
+        else statsFilePath = "..//baseballStats//" + statsFileName;
         try{
             // open the stats file if it exists
-            Scanner inFile = new Scanner(new File(statsFileName));
+            Scanner inFile = new Scanner(new File(statsFilePath));
             pitchesThrown = inFile.nextInt(); strikesThrown = inFile.nextInt();
             ballsThrown = inFile.nextInt(); gamesPitched = inFile.nextInt();
             gamesStarted = inFile.nextInt(); gamesFinished = inFile.nextInt();
@@ -75,7 +78,7 @@ public class PitchingStats {
     public boolean updatePitchingStatsFile() {
         try {
             // write the current values in the object to the stats file
-            PrintStream oFile = new PrintStream(statsFileName);
+            PrintStream oFile = new PrintStream(statsFilePath);
             oFile.println("Pitches Thrown: " + pitchesThrown);
             oFile.println("Strikes Thrown: " + strikesThrown);
             oFile.println("Balls Thrown: " + ballsThrown);
