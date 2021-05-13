@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * A class for a baseball player
  *
  * @author - Joshua Seward
- * @version - 1.1.0
+ * @version - 1.1.
  * @since - May 8, 2021
  */
 public class BaseballPlayer extends Athlete {
