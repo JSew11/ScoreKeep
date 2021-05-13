@@ -7,7 +7,6 @@
  */
 public class BaseballPlayerStats {
     private PitchingStats pitchingStats;
-    private String pitchingStatsFileName;
 
     /**
      * Constructor to create a BaseballPlayerStats object using
@@ -16,7 +15,7 @@ public class BaseballPlayerStats {
      *                     are being kept
      */
     public BaseballPlayerStats(String playerName) {
-        pitchingStatsFileName = playerName + "_pitching.txt";
+        String pitchingStatsFileName = playerName + "_pitching.txt";
         pitchingStats = new PitchingStats(pitchingStatsFileName);
     }
 
