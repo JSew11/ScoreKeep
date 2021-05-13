@@ -80,6 +80,13 @@ public class BaseballPlayer extends Athlete {
     public void removeSecondary_position(BaseballPosition position) {secondary_positions.remove(position);}
 
     /**
+     * Accessor for the baseball player's BaseballPlayerStats object
+     *
+     * @return - baseball player's BaseballPlayerStats object
+     */
+    public BaseballPlayerStats getStats() {return stats;}
+
+    /**
      * Method to update all of the player's stats files
      *
      * @return - boolean value representing whether the files were
