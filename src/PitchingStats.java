@@ -17,7 +17,7 @@ public class PitchingStats {
     private double inningsPitched;
     private int hits, runs, earnedRuns, homeRuns, walks;
     private int intentionalWalks, strikeouts, hitByPitch;
-    private int balks, pickoffs, wildPitches, battersFaced;
+    private int balks, pickOffs, wildPitches, battersFaced;
     // object to calculate more complex stats
     private PitchingCalc pitchingCalc;
     // PitchingStats input/output file name
@@ -55,7 +55,7 @@ public class PitchingStats {
             earnedRuns = inFile.nextInt(); homeRuns = inFile.nextInt();
             walks = inFile.nextInt(); intentionalWalks = inFile.nextInt();
             strikeouts = inFile.nextInt(); hitByPitch = inFile.nextInt();
-            balks = inFile.nextInt(); pickoffs = inFile.nextInt();
+            balks = inFile.nextInt(); pickOffs = inFile.nextInt();
             wildPitches = inFile.nextInt(); battersFaced = inFile.nextInt();
         }
         catch (FileNotFoundException e) {
@@ -65,7 +65,7 @@ public class PitchingStats {
             completeGames = 0; wins = 0; losses = 0; shutouts = 0; saves = 0;
             inningsPitched = 0.0; hits = 0; runs = 0; earnedRuns = 0;
             homeRuns = 0; walks = 0; intentionalWalks = 0; strikeouts = 0;
-            hitByPitch = 0; balks = 0; pickoffs = 0; wildPitches = 0; battersFaced = 0;
+            hitByPitch = 0; balks = 0; pickOffs = 0; wildPitches = 0; battersFaced = 0;
         }
         // instantiate the pitchingCalc object
         pitchingCalc = new PitchingCalc();
@@ -108,7 +108,7 @@ public class PitchingStats {
             oFile.write("Strikeouts (K): " + strikeouts + "\n");
             oFile.write("Hit by Pitch (HBP): " + hitByPitch + "\n");
             oFile.write("Balks (BK): " + balks + "\n");
-            oFile.write("Pickoffs (PO): " + pickoffs + "\n");
+            oFile.write("Pickoffs (PO): " + pickOffs + "\n");
             oFile.write("Wild Pitches (WP): " + wildPitches + "\n");
             oFile.write("Batters Faced (BF): " + battersFaced + "\n");
             // create the decimal format for the calculated stats
@@ -162,7 +162,7 @@ public class PitchingStats {
     public int getStrikeouts() {return strikeouts;}
     public int getHitByPitch() {return hitByPitch;}
     public int getBalks() {return balks;}
-    public int getPickoffs() {return pickoffs;}
+    public int getPickOffs() {return pickOffs;}
     public int getWildPitches() {return wildPitches;}
     public int getBattersFaced() {return battersFaced;}
 
@@ -206,7 +206,7 @@ public class PitchingStats {
     public void setStrikeouts(int strikeouts) {this.strikeouts = strikeouts;}
     public void setHitByPitch(int hitByPitch) {this.hitByPitch = hitByPitch;}
     public void setBalks(int balks) {this.balks = balks;}
-    public void setPickoffs(int pickoffs) {this.pickoffs = pickoffs;}
+    public void setPickOffs(int pickOffs) {this.pickOffs = pickOffs;}
     public void setWildPitches(int wildPitches) {this.wildPitches = wildPitches;}
     public void setBattersFaced(int battersFaced) {this.battersFaced = battersFaced;}
 

@@ -52,7 +52,7 @@ public class PitchingStatsTest {
         JoshuaSeward_pitchingStats.setWalks(27);
         JoshuaSeward_pitchingStats.setStrikeouts(78);
         JoshuaSeward_pitchingStats.setHitByPitch(8);
-        JoshuaSeward_pitchingStats.setPickoffs(1);
+        JoshuaSeward_pitchingStats.setPickOffs(1);
         JoshuaSeward_pitchingStats.setBattersFaced(376);
         assertEquals(true, JoshuaSeward_pitchingStats.updatePitchingStatsFile());
     }
