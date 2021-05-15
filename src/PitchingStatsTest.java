@@ -1,3 +1,4 @@
+import jdk.nashorn.internal.scripts.JO;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class PitchingStatsTest {
     PitchingStats JoshuaSeward_pitchingStats =
-            new PitchingStats("JoshuaSeward_pitching.txt");
+                new PitchingStats("JoshuaSeward_pitching.txt");
 
     @Test
     public void newPlayerPitchingStats() {
@@ -20,6 +21,27 @@ public class PitchingStatsTest {
         assertEquals(0.0, newPitcher.getInningsPitched());
         assertEquals(0, newPitcher.getHomeRuns());
         assertEquals(0, newPitcher.getHitByPitch());
+    }
+
+    @Test
+    public void existingPlayerStats() {
+        // check that the stats are initialized to the correct values
+        assertEquals(23, JoshuaSeward_pitchingStats.getGamesPitched());
+        assertEquals(17, JoshuaSeward_pitchingStats.getGamesStarted());
+        assertEquals(12, JoshuaSeward_pitchingStats.getWins());
+        assertEquals(2, JoshuaSeward_pitchingStats.getLosses());
+        assertEquals(1, JoshuaSeward_pitchingStats.getShutouts());
+        assertEquals(1, JoshuaSeward_pitchingStats.getSaves());
+        assertEquals(92.0, JoshuaSeward_pitchingStats.getInningsPitched());
+        assertEquals(71, JoshuaSeward_pitchingStats.getHits());
+        assertEquals(23, JoshuaSeward_pitchingStats.getRuns());
+        assertEquals(19, JoshuaSeward_pitchingStats.getEarnedRuns());
+        assertEquals(2, JoshuaSeward_pitchingStats.getHomeRuns());
+        assertEquals(27, JoshuaSeward_pitchingStats.getWalks());
+        assertEquals(78, JoshuaSeward_pitchingStats.getStrikeouts());
+        assertEquals(8, JoshuaSeward_pitchingStats.getHitByPitch());
+        assertEquals(1, JoshuaSeward_pitchingStats.getPickOffs());
+        assertEquals(376, JoshuaSeward_pitchingStats.getBattersFaced());
     }
 
     @Test
