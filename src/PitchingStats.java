@@ -1,4 +1,6 @@
 import java.io.*;
+import java.nio.Buffer;
+import java.nio.file.*;
 import java.text.DecimalFormat;
 import java.util.*;
 
@@ -30,43 +32,15 @@ public class PitchingStats {
      * @param statsFileName - name of the file containing pitching statistics
      */
     public PitchingStats(String statsFileName) {
-        // create the path to the pitching stats file
-        this.statsFileName = statsFileName;
-        String statsFilePath = System.getProperty("user.dir");
-        String os = System.getProperty("os.name");
-        if(os.contains("Windows")) statsFilePath = "\\\\baseballStats\\\\" + statsFileName;
-        else statsFilePath = statsFilePath + "//baseballStats//" + statsFileName;
-        try{
-            // open the stats file if it exists
-            Scanner inFile = new Scanner(new File(statsFilePath));
-            pitchesThrown = inFile.nextInt(); strikesThrown = inFile.nextInt();
-            ballsThrown = inFile.nextInt(); gamesPitched = inFile.nextInt();
-            gamesStarted = inFile.nextInt(); gamesFinished = inFile.nextInt();
-            completeGames = inFile.nextInt(); wins = inFile.nextInt();
-            losses = inFile.nextInt(); shutouts = inFile.nextInt();
-            saves = inFile.nextInt();
-            // read and interpret the innings pitched stat
-            double iP = inFile.nextDouble();
-            int ip_int = (int) iP;
-            if(iP - ip_int == 0.0) inningsPitched = iP;
-            else if(iP - ip_int == 0.1) inningsPitched = ((double) ip_int) + (1.0/3.0);
-            else if(iP - ip_int == 0.2) inningsPitched = ((double) ip_int) + (2.0/3.0);
-            hits = inFile.nextInt(); runs = inFile.nextInt();
-            earnedRuns = inFile.nextInt(); homeRuns = inFile.nextInt();
-            walks = inFile.nextInt(); intentionalWalks = inFile.nextInt();
-            strikeouts = inFile.nextInt(); hitByPitch = inFile.nextInt();
-            balks = inFile.nextInt(); pickOffs = inFile.nextInt();
-            wildPitches = inFile.nextInt(); battersFaced = inFile.nextInt();
-        }
-        catch (FileNotFoundException e) {
-            // the file does not exist, so set the stored values to 0
-            pitchesThrown = 0; strikesThrown = 0; ballsThrown = 0;
-            gamesPitched = 0; gamesStarted = 0; gamesFinished = 0;
-            completeGames = 0; wins = 0; losses = 0; shutouts = 0; saves = 0;
-            inningsPitched = 0.0; hits = 0; runs = 0; earnedRuns = 0;
-            homeRuns = 0; walks = 0; intentionalWalks = 0; strikeouts = 0;
-            hitByPitch = 0; balks = 0; pickOffs = 0; wildPitches = 0; battersFaced = 0;
-        }
+        // TRY TO READ AN INPUT FILE
+
+        // the file does not exist, so set the stored values to 0
+        pitchesThrown = 0; strikesThrown = 0; ballsThrown = 0;
+        gamesPitched = 0; gamesStarted = 0; gamesFinished = 0;
+        completeGames = 0; wins = 0; losses = 0; shutouts = 0; saves = 0;
+        inningsPitched = 0.0; hits = 0; runs = 0; earnedRuns = 0;
+        homeRuns = 0; walks = 0; intentionalWalks = 0; strikeouts = 0;
+        hitByPitch = 0; balks = 0; pickOffs = 0; wildPitches = 0; battersFaced = 0;
         // instantiate the pitchingCalc object
         pitchingCalc = new PitchingCalc();
     }
@@ -79,59 +53,8 @@ public class PitchingStats {
      *           successfully updated
      */
     public boolean updatePitchingStatsFile() {
-        // create the output file using the current directory and the known stats output file
-        File outputFile;
-        String cur_dir = System.getProperty("user.dir");
-        String os = System.getProperty("os.name");
-        if(os.contains("Windows")) outputFile = new File(cur_dir + "\\baseballStats\\", statsFileName);
-        else outputFile = new File(cur_dir + "/baseballStats/", statsFileName);
-        try (BufferedWriter oFile = new BufferedWriter(new FileWriter(outputFile))){
-            // write the current values in the object to the stats file
-            oFile.write("Pitches Thrown: " + pitchesThrown + "\n");
-            oFile.write("Strikes Thrown: " + strikesThrown + "\n");
-            oFile.write("Balls Thrown: " + ballsThrown + "\n");
-            oFile.write("Games Pitched (G): " + gamesPitched + "\n");
-            oFile.write("Games Started (GS): " + gamesStarted + "\n");
-            oFile.write("Games Finished (GF): " + gamesFinished + "\n");
-            oFile.write("Complete Games (CG): " + completeGames + "\n");
-            oFile.write("Wins (W): " + wins + "\n");
-            oFile.write("Losses (L): " + losses + "\n");
-            oFile.write("Shutouts (SO): " + shutouts + "\n");
-            oFile.write("Saves (SV): " + saves + "\n");
-            oFile.write("Innings Pitched (IP): " + getInningsPitched() + "\n");
-            oFile.write("Hits (H): " + hits + "\n");
-            oFile.write("Runs (R): " + runs + "\n");
-            oFile.write("Earned Runs (ER): " + earnedRuns + "\n");
-            oFile.write("Home Runs (HR): " + homeRuns + "\n");
-            oFile.write("Walks (BB): " + walks + "\n");
-            oFile.write("Intentional Walks (IBB): " + intentionalWalks + "\n");
-            oFile.write("Strikeouts (K): " + strikeouts + "\n");
-            oFile.write("Hit by Pitch (HBP): " + hitByPitch + "\n");
-            oFile.write("Balks (BK): " + balks + "\n");
-            oFile.write("Pickoffs (PO): " + pickOffs + "\n");
-            oFile.write("Wild Pitches (WP): " + wildPitches + "\n");
-            oFile.write("Batters Faced (BF): " + battersFaced + "\n");
-            // create the decimal format for the calculated stats
-            DecimalFormat df = new DecimalFormat("##.##");
-            DecimalFormat dfWHIP = new DecimalFormat("#.###");
-            oFile.write("Strike Percentage (K%): " + df.format(getStrikePercent()) + "\n");
-            oFile.write("Win-Loss Percentage (W-L%): " + df.format(getWinLossPercent()) + "\n");
-            oFile.write("Earned Runs Average (ERA): " + df.format(getERA()) + "\n");
-            oFile.write("WHIP: " + dfWHIP.format(getWHIP()) + "\n");
-            oFile.write("Hits/9 (H9): " + df.format(getH9()) + "\n");
-            oFile.write("Home Runs/9 (HR/9): " + df.format(getHR9()) + "\n");
-            oFile.write("Walks/9 (BB9): " + df.format(getBB9()) + "\n");
-            oFile.write("Strikeouts/9 (K9): " + df.format(getK9()) + "\n");
-            return true;
-        }
-        catch (FileNotFoundException e) {
-            System.out.println("ERROR - Problem with output PitchingStats file");
-            return false;
-        }
-        catch (IOException e) {
-            System.out.println("ERROR - Problem with output PitchingStats file");
-            return false;
-        }
+        // TRY TO CREATE AND UPDATE AND OUTPUT FILE
+        return false;
     }
 
     // attribute accessors
@@ -210,6 +133,6 @@ public class PitchingStats {
     public void setWildPitches(int wildPitches) {this.wildPitches = wildPitches;}
     public void setBattersFaced(int battersFaced) {this.battersFaced = battersFaced;}
 
-    // method to help with testing
+    // methods to help with testing
     public double actualInningsPitched() {return inningsPitched;}
 }
