@@ -126,17 +126,11 @@ public class BattingStats {
             // create the decimal format to write the calculated stats
             DecimalFormat df = new DecimalFormat("##.##");
             DecimalFormat ops = new DecimalFormat("##.###");
-            oFile.println("Batting Average (BA):");
-            oFile.println(df.format(battingCalc.BA(hits, atBats)));
-            oFile.println("On base Percentage (OBP):");
-            oFile.println(df.format(battingCalc.OBP(hits,walks,hitByPitch,atBats,sacrificeFlies)));
-            oFile.println("Total Bases (TB):");
-            oFile.println(battingCalc.TB(hits,doubles,triples,homeRuns));
-            oFile.println("Slugging Percentage (SLG):");
-            oFile.println(df.format(battingCalc.SLG(hits,doubles,triples,homeRuns,atBats)));
-            oFile.println("On Base Plus Slugging Percentage (OPS):");
-            oFile.println(ops.format(battingCalc.OPS(hits,doubles,triples,homeRuns,walks,
-                                                     hitByPitch,atBats,sacrificeFlies)));
+            oFile.println("Batting Average (BA):"); oFile.println(df.format(getBA()));
+            oFile.println("On base Percentage (OBP):"); oFile.println(df.format(getOBP()));
+            oFile.println("Total Bases (TB):"); oFile.println(getTB());
+            oFile.println("Slugging Percentage (SLG):"); oFile.println(df.format(getSLG()));
+            oFile.println("On Base Plus Slugging Percentage (OPS):"); oFile.println(ops.format(getOPS()));
             oFile.close();
             return true;
         }
@@ -148,5 +142,18 @@ public class BattingStats {
             return false;
         }
     }
+
+    // attribute accessors
+
+
+    // calculated stats from battingCalc
+    public double getBA() {return battingCalc.BA(hits, atBats);}
+    public double getOBP() {return battingCalc.OBP(hits,walks,hitByPitch,atBats,sacrificeFlies);}
+    public int getTB() {return battingCalc.TB(hits,doubles,triples,homeRuns);}
+    public double getSLG() {return battingCalc.SLG(hits,doubles,triples,homeRuns,atBats);}
+    public double getOPS() {return battingCalc.OPS(hits,doubles,triples,homeRuns,walks,
+                                                   hitByPitch,atBats,sacrificeFlies);}
+
+    // attribute mutators
 }
 
