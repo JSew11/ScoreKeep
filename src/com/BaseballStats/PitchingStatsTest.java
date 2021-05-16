@@ -9,8 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author - Joshua Seward
  */
 public class PitchingStatsTest {
-    PitchingStats JoshuaSeward_pitchingStats =
-                new PitchingStats("JoshuaSeward");
+    PitchingStats JoshuaSeward_pitchingStats;
 
     @Test
     public void newPlayerPitchingStats() {
@@ -26,6 +25,8 @@ public class PitchingStatsTest {
 
     @Test
     public void setPlayerInningsPitched() {
+        JoshuaSeward_pitchingStats =
+                new PitchingStats("JoshuaSeward");
         // test multiple inputs for innings pitched
         JoshuaSeward_pitchingStats.setInningsPitched(92.0 + 2.0/3.0);
         assertEquals(92.2, JoshuaSeward_pitchingStats.getInningsPitched());
@@ -39,6 +40,8 @@ public class PitchingStatsTest {
 
     @Test
     public void updatePitchingStatsFile() {
+        JoshuaSeward_pitchingStats =
+                new PitchingStats("JoshuaSeward");
         // set stats from my high school baseball career
         JoshuaSeward_pitchingStats.setGamesPitched(23);
         JoshuaSeward_pitchingStats.setGamesStarted(17);
@@ -61,6 +64,8 @@ public class PitchingStatsTest {
 
     @Test
     public void existingPlayerStats() {
+        JoshuaSeward_pitchingStats =
+                new PitchingStats("JoshuaSeward");
         // check that the stats are initialized to the correct values
         assertEquals(23, JoshuaSeward_pitchingStats.getGamesPitched());
         assertEquals(17, JoshuaSeward_pitchingStats.getGamesStarted());
