@@ -1,5 +1,7 @@
 package com.BaseballStats;
 
+import java.lang.reflect.Field;
+
 /**
  * A class for the stats of a baseball player
  *
@@ -41,4 +43,25 @@ public class BaseballPlayerStats {
         if(!fieldingStats.updateFieldingStatsFile()) return false;
         return true;
     }
+
+    /**
+     * Accessor method for the player's BattingStats object
+     *
+     * @return - player's BattingStats object
+     */
+    public BattingStats getBattingStats() {return battingStats;}
+
+    /**
+     * Accessor method for the player's FieldingStats object
+     *
+     * @return - player's Fielding object
+     */
+    public FieldingStats getFieldingStats() {return fieldingStats;}
+
+    /**
+     * Accessor method for the player's PitchingStats object
+     *
+     * @return - player's PitchingStats object
+     */
+    public PitchingStats getPitchingStats() {return pitchingStats;}
 }
