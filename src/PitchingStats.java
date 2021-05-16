@@ -30,9 +30,8 @@ public class PitchingStats {
      * @param statsFileName - name of the file containing pitching statistics
      */
     public PitchingStats(String statsFileName) {
-        this.statsFileName = statsFileName;
+        this.statsFileName = statsFileName + "_pitching.txt";
 
-        // TRY TO READ AN INPUT FILE
         if(!readInputFile()) {
             // the file does not exist, so set the stored values to 0
             pitchesThrown = 0; strikesThrown = 0; ballsThrown = 0;
@@ -111,7 +110,7 @@ public class PitchingStats {
      *           successfully updated
      */
     public boolean updatePitchingStatsFile() {
-        // TRY TO CREATE AND UPDATE AND OUTPUT FILE
+        // get the path to the output file
         String filePathName = System.getProperty("user.dir");
         String os = System.getProperty("os.name");
         if(os.contains("Windows"))

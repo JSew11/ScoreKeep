@@ -32,7 +32,7 @@ public class BaseballPlayer extends Athlete {
         super(first_name, last_name, number);
         primary_position = position;
         secondary_positions = new ArrayList<BaseballPosition>();
-        stats = new BaseballPlayerStats(first_name + last_name);
+        stats = new BaseballPlayerStats(first_name, last_name);
     }
 
     /**

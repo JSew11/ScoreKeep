@@ -9,11 +9,11 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class PitchingStatsTest {
     PitchingStats JoshuaSeward_pitchingStats =
-                new PitchingStats("JoshuaSeward_pitching.txt");
+                new PitchingStats("JoshuaSeward");
 
     @Test
     public void newPlayerPitchingStats() {
-        PitchingStats newPitcher = new PitchingStats("NewPlayer_pitching.txt");
+        PitchingStats newPitcher = new PitchingStats("NewPlayer");
         // check that the stats are initialized to 0
         assertEquals(0, newPitcher.getPitchesThrown());
         assertEquals(0, newPitcher.getGamesPitched());

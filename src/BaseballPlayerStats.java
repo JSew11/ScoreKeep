@@ -6,7 +6,10 @@
  * @since - May 11, 2021
  */
 public class BaseballPlayerStats {
+    private String statFileName;
+    // stats objects
     private PitchingStats pitchingStats;
+    private BattingStats battingStats;
 
     /**
      * Constructor to create a BaseballPlayerStats object using
@@ -14,9 +17,9 @@ public class BaseballPlayerStats {
      * @param playerName - name of the baseball player whose stats
      *                     are being kept
      */
-    public BaseballPlayerStats(String playerName) {
-        String pitchingStatsFileName = playerName + "_pitching.txt";
-        pitchingStats = new PitchingStats(pitchingStatsFileName);
+    public BaseballPlayerStats(String first_name, String last_name) {
+        statFileName = first_name + last_name;
+        pitchingStats = new PitchingStats(statFileName);
     }
 
     /**
