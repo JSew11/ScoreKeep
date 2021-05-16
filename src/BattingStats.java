@@ -144,7 +144,24 @@ public class BattingStats {
     }
 
     // attribute accessors
-
+    public int getGamesPlayed() {return gamesPlayed;}
+    public int getPlateAppearances() {return plateAppearances;}
+    public int getAtBats() {return atBats;}
+    public int getRuns() {return runs;}
+    public int getHits() {return hits;}
+    public int getDoubles() {return doubles;}
+    public int getTriples() {return triples;}
+    public int getHomeRuns() {return homeRuns;}
+    public int getRunsBattedIn() {return runsBattedIn;}
+    public int getStolenBases() {return stolenBases;}
+    public int getCaughtStealing() {return caughtStealing;}
+    public int getWalks() {return walks;}
+    public int getStrikeouts() {return strikeouts;}
+    public int getDoublePlays() {return doublePlays;}
+    public int getHitByPitch() {return hitByPitch;}
+    public int getSacrificeHits() {return sacrificeHits;}
+    public int getSacrificeFlies() {return sacrificeFlies;}
+    public int getIntentionalWalks() {return intentionalWalks;}
 
     // calculated stats from battingCalc
     public double getBA() {return battingCalc.BA(hits, atBats);}
@@ -155,5 +172,23 @@ public class BattingStats {
                                                    hitByPitch,atBats,sacrificeFlies);}
 
     // attribute mutators
+    public void setGamesPlayed(int gamesPlayed) {this.gamesPlayed = gamesPlayed;}
+    public void setPlateAppearances(int plateAppearances) {this.plateAppearances = plateAppearances;}
+    public void setAtBats(int atBats) {this.atBats = atBats;}
+    public void setRuns(int runs) {this.runs = runs;}
+    public void setHits(int hits) {this.hits = hits;}
+    public void setDoubles(int doubles) {this.doubles = doubles;}
+    public void setTriples(int triples) {this.triples = triples;}
+    public void setHomeRuns(int homeRuns) {this.homeRuns = homeRuns;}
+    public void setRunsBattedIn(int runsBattedIn) {this.runsBattedIn = runsBattedIn;}
+    public void setStolenBases(int stolenBases) {this.stolenBases = stolenBases;}
+    public void setCaughtStealing(int caughtStealing) {this.caughtStealing = caughtStealing;}
+    public void setWalks(int walks) {this.walks = walks;}
+    public void setStrikeouts(int strikeouts) {this.strikeouts = strikeouts;}
+    public void setDoublePlays(int doublePlays) {this.doublePlays = doublePlays;}
+    public void setHitByPitch(int hitByPitch) {this.hitByPitch = hitByPitch;}
+    public void setSacrificeHits(int sacrificeHits) {this.sacrificeHits = sacrificeHits;}
+    public void setSacrificeFlies(int sacrificeFlies) {this.sacrificeFlies = sacrificeFlies;}
+    public void setIntentionalWalks(int intentionalWalks) {this.intentionalWalks = intentionalWalks;}
 }
 
