@@ -12,6 +12,7 @@ public class BaseballPlayerStats {
     // stats objects
     private PitchingStats pitchingStats;
     private BattingStats battingStats;
+    private FieldingStats fieldingStats;
 
     /**
      * Constructor to create a com.BaseballStats.BaseballPlayerStats object using
@@ -25,6 +26,7 @@ public class BaseballPlayerStats {
         statFileName = first_name + last_name;
         pitchingStats = new PitchingStats(statFileName);
         battingStats = new BattingStats(statFileName);
+        fieldingStats = new FieldingStats(statFileName);
     }
 
     /**
@@ -36,6 +38,7 @@ public class BaseballPlayerStats {
     public boolean updateStats() {
         if(!pitchingStats.updatePitchingStatsFile()) return false;
         if(!battingStats.updateBattingStatsFile()) return false;
+        if(!fieldingStats.updateFieldingStatsFile()) return false;
         return true;
     }
 }
