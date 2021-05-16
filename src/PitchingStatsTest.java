@@ -57,7 +57,7 @@ public class PitchingStatsTest {
         JoshuaSeward_pitchingStats.setBattersFaced(376);
         assertEquals(true, JoshuaSeward_pitchingStats.updatePitchingStatsFile());
     }
-    
+
     @Test
     public void existingPlayerStats() {
         // check that the stats are initialized to the correct values
