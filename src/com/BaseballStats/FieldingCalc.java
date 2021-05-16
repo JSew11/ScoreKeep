@@ -30,7 +30,9 @@ public class FieldingCalc {
      * @return - fielding percentage
      */
     public double fieldingPercent(int putouts, int assists, int errors) {
-        return ((double) (putouts + assists)) / ((double) chances(putouts,assists,errors));
+        int chances = chances(putouts,assists,errors);
+        if(chances == 0) return 0.0;
+        return ((double) (putouts + assists)) / ((double) chances);
     }
 
     /**
@@ -42,6 +44,7 @@ public class FieldingCalc {
      * @return - range factor per 9 innings
      */
     public double RF9(int putouts, int assists, double inningsPlayed) {
-        return (9.0 * (putouts+assists))/inningsPlayed;
+        if(inningsPlayed == 0.0) return 0.0;
+        return (9.0 * ((double) (putouts+assists)))/inningsPlayed;
     }
 }

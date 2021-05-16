@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Unit testing for the com.BaseballStats.PitchingStats class
+ * Unit testing for the PitchingStats class
  *
  * @author - Joshua Seward
  */

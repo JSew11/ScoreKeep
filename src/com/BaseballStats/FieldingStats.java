@@ -101,8 +101,11 @@ public class FieldingStats {
             oFile.println("Errors (E):"); oFile.println(errors);
             oFile.println("Double Plays (DP):"); oFile.println(doublePlays);
             // create the decimal format to write the calculated stats
-            DecimalFormat df = new DecimalFormat("##.##");
-            DecimalFormat whip = new DecimalFormat("##.###");
+            DecimalFormat df = new DecimalFormat("#.###");
+            DecimalFormat rf9 = new DecimalFormat("#.##");
+            oFile.println("Chances (Ch):"); oFile.println(getChances());
+            oFile.println("Fielding Percent (Fld%):"); oFile.println(getFieldingPercent());
+            oFile.println("Range Factor Per 9 (RF9):"); oFile.println(getRF9());
             oFile.close();
             return true;
         }

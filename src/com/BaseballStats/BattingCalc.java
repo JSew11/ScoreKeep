@@ -17,6 +17,7 @@ public class BattingCalc {
      * @return - batting average
      */
     public double BA(int hits, int atBats) {
+        if(atBats == 0) return 0.0;
         return ((double) hits)/((double) atBats);
     }
 
@@ -31,7 +32,9 @@ public class BattingCalc {
      * @return - on base percentage
      */
     public double OBP(int hits, int walks, int hitByPitch, int atBats, int sacFlies) {
-        return ((double) (hits + walks + hitByPitch))/((double) (atBats + walks + hitByPitch + sacFlies));
+        int denom = atBats + walks + hitByPitch + sacFlies;
+        if(denom == 0) return 0.0;
+        return ((double) (hits + walks + hitByPitch))/((double) denom);
     }
 
     /**
