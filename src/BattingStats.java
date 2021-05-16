@@ -74,7 +74,7 @@ public class BattingStats {
             return true;
         }
         catch (FileNotFoundException e) {
-            System.out.println("Input File Not Found");
+            System.out.println("Input File Not Found - " + statsFileName);
             return false;
         }
         catch (NoSuchElementException e) {
