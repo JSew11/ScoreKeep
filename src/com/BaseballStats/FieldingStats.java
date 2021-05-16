@@ -9,7 +9,7 @@ public class FieldingStats {
     // member variables for basic statistics
     private int gamesPlayed, gamesStarted, completeGames;
     private double inningsPlayed;
-    private int chances, putouts, assists, errors, doublePlays;
+    private int putouts, assists, errors, doublePlays;
     // object to calculate more complex pitching stats
     private FieldingCalc fieldingCalc;
     // input/output file name
@@ -28,7 +28,7 @@ public class FieldingStats {
             // the file does not exist, so set the stored values to 0
             gamesPlayed = 0; gamesStarted = 0; completeGames = 0;
             inningsPlayed = 0.0;
-            chances = 0; putouts = 0; assists = 0; errors = 0; doublePlays = 0;
+            putouts = 0; assists = 0; errors = 0; doublePlays = 0;
         }
         // instantiate the fieldingCalc object
         fieldingCalc = new FieldingCalc();
@@ -54,7 +54,6 @@ public class FieldingStats {
             iFile.nextLine(); completeGames = Integer.parseInt(iFile.nextLine());
             iFile.nextLine(); double iP = Double.parseDouble(iFile.nextLine());
             setInningsPlayed(iP);
-            iFile.nextLine(); chances = Integer.parseInt(iFile.nextLine());
             iFile.nextLine(); putouts = Integer.parseInt(iFile.nextLine());
             iFile.nextLine(); assists = Integer.parseInt(iFile.nextLine());
             iFile.nextLine(); errors = Integer.parseInt(iFile.nextLine());
@@ -97,7 +96,6 @@ public class FieldingStats {
             oFile.println("Games Started (GS):"); oFile.println(gamesStarted);
             oFile.println("Complete Games (CG):"); oFile.println(completeGames);
             oFile.println("Innings Played (IP):"); oFile.println(getInningsPlayed());
-            oFile.println("Chances (CH):"); oFile.println(chances);
             oFile.println("Putouts (PO):"); oFile.println(putouts);
             oFile.println("Assists (A):"); oFile.println(assists);
             oFile.println("Errors (E):"); oFile.println(errors);
@@ -128,13 +126,15 @@ public class FieldingStats {
         else if(inningsPlayed == iP + (2.0/3.0)) return ((double) iP) + 0.2;
         else return inningsPlayed;
     }
-    public int getChances() {return chances;}
     public int getPutouts() {return putouts;}
     public int getAssists() {return assists;}
     public int getErrors() {return errors;}
     public int getDoublePlays() {return doublePlays;}
 
     // calculated stats from fieldingCalc
+    public int getChances() {return fieldingCalc.chances(putouts,assists,errors);}
+    public double getFieldingPercent() {return fieldingCalc.fieldingPercent(putouts,assists,errors);}
+    public double getRF9() {return fieldingCalc.RF9(putouts,assists,inningsPlayed);}
 
     // attribute mutators
     public void setGamesPlayed(int gamesPlayed) {this.gamesPlayed = gamesPlayed;}
@@ -149,7 +149,6 @@ public class FieldingStats {
         else if(inningsPlayed == iP + 0.1) this.inningsPlayed = ((double) iP) + (1.0/3.0);
         else if(inningsPlayed == iP + 0.2) this.inningsPlayed = ((double) iP) + (2.0/3.0);
     }
-    public void setChances(int chances) {this.chances = chances;}
     public void setPutouts(int putouts) {this.putouts = putouts;}
     public void setAssists(int assists) {this.assists = assists;}
     public void setErrors(int errors) {this.errors = errors;}
