@@ -1,6 +1,5 @@
 package com.BaseballStats;
 
-import com.BaseballStats.BattingStats;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
