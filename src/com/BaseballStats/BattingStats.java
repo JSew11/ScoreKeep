@@ -1,4 +1,4 @@
-package com.Athlete;
+package com.BaseballStats;
 
 import java.io.*;
 import java.text.DecimalFormat;
@@ -20,7 +20,7 @@ public class BattingStats {
     private int sacrificeHits, sacrificeFlies, intentionalWalks;
     // object to calculate more complex stats
     private BattingCalc battingCalc;
-    // com.Athlete.BattingStats input/output file name
+    // com.BaseballStats.BattingStats input/output file name
     private String statsFileName;
 
     public BattingStats(String statsFileName) {
@@ -35,7 +35,7 @@ public class BattingStats {
             sacrificeHits = 0; sacrificeFlies = 0; intentionalWalks = 0;
         }
 
-        // initialize the com.Athlete.BattingCalc object
+        // initialize the com.BaseballStats.BattingCalc object
         battingCalc = new BattingCalc();
     }
 
@@ -54,7 +54,7 @@ public class BattingStats {
         else filePathName = filePathName + "/baseballStats/" + statsFileName;
         File inputFile = new File(filePathName);
         try (Scanner iFile = new Scanner(inputFile)) {
-            // read the data from the file into the com.Athlete.PitchingStats object
+            // read the data from the file into the com.BaseballStats.PitchingStats object
             iFile.nextLine(); gamesPlayed = Integer.parseInt(iFile.nextLine());
             iFile.nextLine(); plateAppearances = Integer.parseInt(iFile.nextLine());
             iFile.nextLine(); atBats = Integer.parseInt(iFile.nextLine());
@@ -106,7 +106,7 @@ public class BattingStats {
         try {
             FileWriter outputFile = new FileWriter(filePathName);
             PrintWriter oFile = new PrintWriter(outputFile);
-            // write the current values of the com.Athlete.PitchingStats object to the file
+            // write the current values of the com.BaseballStats.PitchingStats object to the file
             oFile.println("Games Played (GP): "); oFile.println(gamesPlayed);
             oFile.println("Plate Appearances (PA): "); oFile.println(plateAppearances);
             oFile.println("At Bats (AB): "); oFile.println(atBats);

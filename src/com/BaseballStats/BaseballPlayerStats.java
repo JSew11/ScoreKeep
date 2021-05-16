@@ -1,4 +1,4 @@
-package com.Athlete;
+package com.BaseballStats;
 
 /**
  * A class for the stats of a baseball player
@@ -14,7 +14,7 @@ public class BaseballPlayerStats {
     private BattingStats battingStats;
 
     /**
-     * Constructor to create a com.Athlete.BaseballPlayerStats object using
+     * Constructor to create a com.BaseballStats.BaseballPlayerStats object using
      *
      * @param first_name - first name of the baseball player whose
      *                     stats are being kept

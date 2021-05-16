@@ -1,4 +1,4 @@
-package com.Athlete;
+package com.BaseballStats;
 
 /**
  * A class with methods to calculate more complex
