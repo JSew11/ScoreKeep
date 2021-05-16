@@ -20,9 +20,15 @@ public class BattingStats {
     private int sacrificeHits, sacrificeFlies, intentionalWalks;
     // object to calculate more complex stats
     private BattingCalc battingCalc;
-    // com.BaseballStats.BattingStats input/output file name
+    // input/output file name
     private String statsFileName;
 
+    /**
+     * Constructor to instantiate the stored values for each statistic based
+     * upon the values stored in the given file
+     *
+     * @param statsFileName - name of the file containing batting statistics
+     */
     public BattingStats(String statsFileName) {
         this.statsFileName = statsFileName + "_batting.txt";
 

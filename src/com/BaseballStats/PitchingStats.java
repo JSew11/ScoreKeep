@@ -24,7 +24,7 @@ public class PitchingStats {
     private int balks, pickOffs, wildPitches, battersFaced;
     // object to calculate more complex stats
     private PitchingCalc pitchingCalc;
-    // com.BaseballStats.PitchingStats input/output file name
+    // input/output file name
     private String statsFileName;
 
     /**
@@ -77,7 +77,8 @@ public class PitchingStats {
             iFile.nextLine(); losses = Integer.parseInt(iFile.nextLine());
             iFile.nextLine(); shutouts = Integer.parseInt(iFile.nextLine());
             iFile.nextLine(); saves = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); inningsPitched = Double.parseDouble(iFile.nextLine());
+            iFile.nextLine(); double iP = Double.parseDouble(iFile.nextLine());
+            setInningsPitched(iP);
             iFile.nextLine(); hits = Integer.parseInt(iFile.nextLine());
             iFile.nextLine(); runs = Integer.parseInt(iFile.nextLine());
             iFile.nextLine(); earnedRuns = Integer.parseInt(iFile.nextLine());
@@ -247,6 +248,6 @@ public class PitchingStats {
     public void setWildPitches(int wildPitches) {this.wildPitches = wildPitches;}
     public void setBattersFaced(int battersFaced) {this.battersFaced = battersFaced;}
 
-    // methods to help with testing
+    // method to help with testing
     public double actualInningsPitched() {return inningsPitched;}
 }
