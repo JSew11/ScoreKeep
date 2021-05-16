@@ -49,6 +49,9 @@ public class PitchingStats {
 
     /**
      * Method to read the input file and update the member variables
+     *
+     * @return - boolean value representing whether the file was
+     *           correctly read
      */
     private boolean readInputFile () {
         // get the path to the pitching stats file
