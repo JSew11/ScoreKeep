@@ -1,4 +1,3 @@
-import jdk.nashorn.internal.scripts.JO;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -78,5 +77,4 @@ public class PitchingStatsTest {
         assertEquals(1, JoshuaSeward_pitchingStats.getPickOffs());
         assertEquals(376, JoshuaSeward_pitchingStats.getBattersFaced());
     }
-
 }
