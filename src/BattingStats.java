@@ -124,8 +124,8 @@ public class BattingStats {
             oFile.println("Sacrifice Flies (SF): "); oFile.println(sacrificeFlies);
             oFile.println("Intentional Walks (IBB): "); oFile.println(intentionalWalks);
             // create the decimal format to write the calculated stats
-            DecimalFormat df = new DecimalFormat("##.##");
-            DecimalFormat ops = new DecimalFormat("##.###");
+            DecimalFormat df = new DecimalFormat(".###");
+            DecimalFormat ops = new DecimalFormat("#.###");
             oFile.println("Batting Average (BA):"); oFile.println(df.format(getBA()));
             oFile.println("On base Percentage (OBP):"); oFile.println(df.format(getOBP()));
             oFile.println("Total Bases (TB):"); oFile.println(getTB());
