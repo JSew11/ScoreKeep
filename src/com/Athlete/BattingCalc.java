@@ -1,3 +1,5 @@
+package com.Athlete;
+
 /**
  * A class with methods to calculate more complex
  * batting stats

@@ -1,0 +1,46 @@
+Games Played (GP): 
+18
+Plate Appearances (PA): 
+19
+At Bats (AB): 
+15
+Runs (R): 
+4
+Hits (H): 
+4
+Doubles (2B): 
+0
+Triples (3B): 
+0
+Home Runs (HR):
+0
+Runs Batted In (RBI): 
+4
+Stolen Bases (SB): 
+0
+Caught Stealing (CS): 
+0
+Walks (BB): 
+4
+Strikeouts (K): 
+1
+Double Plays (GDP): 
+0
+Hit By Pitch (HBP): 
+0
+Sacrifice Hits (SH): 
+0
+Sacrifice Flies (SF): 
+0
+Intentional Walks (IBB): 
+0
+Batting Average (BA):
+.267
+On base Percentage (OBP):
+.421
+Total Bases (TB):
+4
+Slugging Percentage (SLG):
+.267
+On Base Plus Slugging Percentage (OPS):
+0.688

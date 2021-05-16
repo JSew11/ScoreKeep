@@ -1,8 +1,10 @@
+package com.Athlete;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Unit testing for the PitchingStats class
+ * Unit testing for the com.Athlete.PitchingStats class
  *
  * @author - Joshua Seward
  */

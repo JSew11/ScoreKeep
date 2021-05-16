@@ -1,3 +1,5 @@
+package com.Athlete;
+
 import java.io.*;
 import java.text.DecimalFormat;
 import java.util.*;
@@ -18,7 +20,7 @@ public class BattingStats {
     private int sacrificeHits, sacrificeFlies, intentionalWalks;
     // object to calculate more complex stats
     private BattingCalc battingCalc;
-    // BattingStats input/output file name
+    // com.Athlete.BattingStats input/output file name
     private String statsFileName;
 
     public BattingStats(String statsFileName) {
@@ -33,7 +35,7 @@ public class BattingStats {
             sacrificeHits = 0; sacrificeFlies = 0; intentionalWalks = 0;
         }
 
-        // initialize the BattingCalc object
+        // initialize the com.Athlete.BattingCalc object
         battingCalc = new BattingCalc();
     }
 
@@ -52,7 +54,7 @@ public class BattingStats {
         else filePathName = filePathName + "/baseballStats/" + statsFileName;
         File inputFile = new File(filePathName);
         try (Scanner iFile = new Scanner(inputFile)) {
-            // read the data from the file into the PitchingStats object
+            // read the data from the file into the com.Athlete.PitchingStats object
             iFile.nextLine(); gamesPlayed = Integer.parseInt(iFile.nextLine());
             iFile.nextLine(); plateAppearances = Integer.parseInt(iFile.nextLine());
             iFile.nextLine(); atBats = Integer.parseInt(iFile.nextLine());
@@ -104,7 +106,7 @@ public class BattingStats {
         try {
             FileWriter outputFile = new FileWriter(filePathName);
             PrintWriter oFile = new PrintWriter(outputFile);
-            // write the current values of the PitchingStats object to the file
+            // write the current values of the com.Athlete.PitchingStats object to the file
             oFile.println("Games Played (GP): "); oFile.println(gamesPlayed);
             oFile.println("Plate Appearances (PA): "); oFile.println(plateAppearances);
             oFile.println("At Bats (AB): "); oFile.println(atBats);

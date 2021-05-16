@@ -1,32 +1,64 @@
-Pitches Thrown: 0
-Strikes Thrown: 0
-Balls Thrown: 0
-Games Pitched (G): 23
-Games Started (GS): 17
-Games Finished (GF): 0
-Complete Games (CG): 0
-Wins (W): 12
-Losses (L): 2
-Shutouts (SO): 1
-Saves (SV): 1
-Innings Pitched (IP): 92.0
-Hits (H): 71
-Runs (R): 23
-Earned Runs (ER): 19
-Home Runs (HR): 2
-Walks (BB): 27
-Intentional Walks (IBB): 0
-Strikeouts (K): 78
-Hit by Pitch (HBP): 8
-Balks (BK): 0
-Pickoffs (PO): 1
-Wild Pitches (WP): 0
-Batters Faced (BF): 376
-Strike Percentage (K%): 0
-Win-Loss Percentage (W-L%): 0.86
-Earned Runs Average (ERA): 1.86
-WHIP: 1.065
-Hits/9 (H9): 6.95
-Home Runs/9 (HR/9): 0.2
-Walks/9 (BB9): 2.64
-Strikeouts/9 (K9): 7.63
+Pitches Thrown: 
+0
+Strikes Thrown: 
+0
+Balls Thrown: 
+0
+Games Pitched (GP): 
+23
+Games Started (GS): 
+17
+Games Finished (GF): 
+0
+Complete Games (CG): 
+0
+Wins (W):
+12
+Losses (L): 
+2
+Shutouts (SO): 
+1
+Saves (SV): 
+1
+Innings Pitched (IP): 
+92.0
+Hits (H): 
+71
+Runs (R): 
+23
+Earned Runs (ER): 
+19
+Home Runs (HR): 
+2
+Walks (BB): 
+27
+Intentional Walks (IBB): 
+0
+Strikeouts (K): 
+78
+Hit By Pitch (HBP): 
+8
+Balks (BK): 
+0
+Pick Offs (PO): 
+1
+Wild Pitches (WP): 
+0
+Batters Faced (BF): 
+376
+Strike Percent: 
+0
+Win-Loss Percent: 
+0.86
+Earned-Runs Average (ERA): 
+1.86
+WHIP: 
+1.065
+Hits Per 9 Innings (H9): 
+6.95
+Home Runs Per 9 Innings (HR9): 
+0.2
+Walks Per 9 Innings (BB9): 
+2.64
+Strikeouts Per 9 Innings (K9): 
+7.63

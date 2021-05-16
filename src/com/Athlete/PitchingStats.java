@@ -1,3 +1,5 @@
+package com.Athlete;
+
 import java.io.*;
 import java.text.DecimalFormat;
 import java.util.*;
@@ -20,7 +22,7 @@ public class PitchingStats {
     private int balks, pickOffs, wildPitches, battersFaced;
     // object to calculate more complex stats
     private PitchingCalc pitchingCalc;
-    // PitchingStats input/output file name
+    // com.Athlete.PitchingStats input/output file name
     private String statsFileName;
 
     /**
@@ -61,7 +63,7 @@ public class PitchingStats {
         else filePathName = filePathName + "/baseballStats/" + statsFileName;
         File inputFile = new File(filePathName);
         try (Scanner iFile = new Scanner(inputFile)) {
-            // read the data from the file into the PitchingStats object
+            // read the data from the file into the com.Athlete.PitchingStats object
             iFile.nextLine(); pitchesThrown = Integer.parseInt(iFile.nextLine());
             iFile.nextLine(); strikesThrown = Integer.parseInt(iFile.nextLine());
             iFile.nextLine(); ballsThrown = Integer.parseInt(iFile.nextLine());
@@ -119,7 +121,7 @@ public class PitchingStats {
         try {
             FileWriter outputFile = new FileWriter(filePathName);
             PrintWriter oFile = new PrintWriter(outputFile);
-            // write the current values of the PitchingStats object to the file
+            // write the current values of the com.Athlete.PitchingStats object to the file
             oFile.println("Pitches Thrown: "); oFile.println(pitchesThrown);
             oFile.println("Strikes Thrown: "); oFile.println(strikesThrown);
             oFile.println("Balls Thrown: "); oFile.println(ballsThrown);

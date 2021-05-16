@@ -1,3 +1,5 @@
+package com.Athlete;
+
 import com.BaseballPosition.*;
 import java.util.ArrayList;
 
@@ -14,14 +16,14 @@ public class BaseballPlayer extends Athlete {
     private BaseballPlayerStats stats;
 
     /**
-     * Constructor for a basic BaseballPlayer object
+     * Constructor for a basic com.Athlete.BaseballPlayer object
      */
     public BaseballPlayer() {
         super();
     }
 
     /**
-     * Overloaded constructor for a specific BaseballPlayer object
+     * Overloaded constructor for a specific com.Athlete.BaseballPlayer object
      *
      * @param first_name - player's first name
      * @param last_name  - player's last name
@@ -80,9 +82,9 @@ public class BaseballPlayer extends Athlete {
     public void removeSecondary_position(BaseballPosition position) {secondary_positions.remove(position);}
 
     /**
-     * Accessor for the baseball player's BaseballPlayerStats object
+     * Accessor for the baseball player's com.Athlete.BaseballPlayerStats object
      *
-     * @return - baseball player's BaseballPlayerStats object
+     * @return - baseball player's com.Athlete.BaseballPlayerStats object
      */
     public BaseballPlayerStats getStats() {return stats;}
 
