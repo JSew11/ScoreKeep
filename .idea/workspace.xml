@@ -2,18 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="586c03a4-3cf4-4e4f-9b68-e67cbf9ca1d7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ScoreKeep.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ScoreKeep.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/Athlete.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/Athlete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/BaseballPlayer.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/BaseballPlayer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/package-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Athlete/BaseballPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Athlete/BaseballPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/BaseballStats/BaseballPlayerStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BaseballStats/BaseballPlayerStats.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1sGtDn2ekXTOyDQ5H1N82f9YDe0" />
   <component name="ProjectViewState">
@@ -21,9 +42,80 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
+  <component name="RunManager" selected="JUnit.FieldingStatsTest">
+    <configuration name="BattingStatsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ScoreKeep" />
+      <option name="PACKAGE_NAME" value="com.BaseballStats" />
+      <option name="MAIN_CLASS_NAME" value="com.BaseballStats.BattingStatsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FieldingStatsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ScoreKeep" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.BaseballStats.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.BaseballStats" />
+      <option name="MAIN_CLASS_NAME" value="com.BaseballStats.FieldingStatsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PitchingStatsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ScoreKeep" />
+      <option name="PACKAGE_NAME" value="com.BaseballStats" />
+      <option name="MAIN_CLASS_NAME" value="com.BaseballStats.PitchingStatsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PitchingStatsTest.existingPlayerStats" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ScoreKeep" />
+      <option name="PACKAGE_NAME" value="com.BaseballStats" />
+      <option name="MAIN_CLASS_NAME" value="com.BaseballStats.PitchingStatsTest" />
+      <option name="METHOD_NAME" value="existingPlayerStats" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PitchingStatsTest.updatePitchingStatsFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ScoreKeep" />
+      <option name="PACKAGE_NAME" value="com.BaseballStats" />
+      <option name="MAIN_CLASS_NAME" value="com.BaseballStats.PitchingStatsTest" />
+      <option name="METHOD_NAME" value="updatePitchingStatsFile" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FieldingStatsTest" />
+        <item itemvalue="JUnit.PitchingStatsTest" />
+        <item itemvalue="JUnit.BattingStatsTest" />
+        <item itemvalue="JUnit.PitchingStatsTest.updatePitchingStatsFile" />
+        <item itemvalue="JUnit.PitchingStatsTest.existingPlayerStats" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="586c03a4-3cf4-4e4f-9b68-e67cbf9ca1d7" name="Default Changelist" comment="" />
@@ -33,5 +125,17 @@
       <updated>1620510639098</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
