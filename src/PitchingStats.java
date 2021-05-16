@@ -48,6 +48,59 @@ public class PitchingStats {
     }
 
     /**
+     * Method to read the input file and update the member variables
+     */
+    private boolean readInputFile () {
+        // get the path to the pitching stats file
+        String filePathName = System.getProperty("user.dir");
+        String os = System.getProperty("os.name");
+        if(os.contains("Windows"))
+            filePathName = filePathName + "\\baseballStats\\" + statsFileName;
+        else filePathName = filePathName + "/baseballStats/" + statsFileName;
+        File inputFile = new File(filePathName);
+        try (Scanner iFile = new Scanner(inputFile)) {
+            // read the data from the file into the PitchingStats object
+            iFile.nextLine(); pitchesThrown = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); strikesThrown = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); ballsThrown = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); gamesPitched = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); gamesStarted = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); gamesFinished = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); completeGames = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); wins = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); losses = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); shutouts = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); saves = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); inningsPitched = Double.parseDouble(iFile.nextLine());
+            iFile.nextLine(); hits = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); runs = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); earnedRuns = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); homeRuns = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); walks = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); intentionalWalks = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); strikeouts = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); hitByPitch = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); balks = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); pickOffs = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); wildPitches = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); battersFaced = Integer.parseInt(iFile.nextLine());
+            return true;
+        }
+        catch (FileNotFoundException e) {
+            System.out.println("Input File Not Found");
+            return false;
+        }
+        catch (NoSuchElementException e) {
+            System.out.println("ERROR - Input File is Empty");
+            return false;
+        }
+        catch (NumberFormatException e) {
+            System.out.println("ERROR - Stat in Incorrect Location");
+            return false;
+        }
+    }
+
+    /**
      * Method to update the pitching stats file using the current values
      * of the member variables
      *
@@ -108,59 +161,6 @@ public class PitchingStats {
             return false;
         } catch (IOException e) {
             System.out.println("ERROR - Problem creating FileWriter");
-            return false;
-        }
-    }
-
-    /**
-     * Method to read the input file and update the member variables
-     */
-    private boolean readInputFile () {
-        // get the path to the pitching stats file
-        String filePathName = System.getProperty("user.dir");
-        String os = System.getProperty("os.name");
-        if(os.contains("Windows"))
-            filePathName = filePathName + "\\baseballStats\\" + statsFileName;
-        else filePathName = filePathName + "/baseballStats/" + statsFileName;
-        File inputFile = new File(filePathName);
-        try (Scanner iFile = new Scanner(inputFile)) {
-            // read the data from the file into the PitchingStats object
-            iFile.nextLine(); pitchesThrown = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); strikesThrown = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); ballsThrown = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); gamesPitched = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); gamesStarted = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); gamesFinished = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); completeGames = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); wins = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); losses = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); shutouts = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); saves = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); inningsPitched = Double.parseDouble(iFile.nextLine());
-            iFile.nextLine(); hits = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); runs = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); earnedRuns = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); homeRuns = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); walks = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); intentionalWalks = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); strikeouts = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); hitByPitch = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); balks = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); pickOffs = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); wildPitches = Integer.parseInt(iFile.nextLine());
-            iFile.nextLine(); battersFaced = Integer.parseInt(iFile.nextLine());
-            return true;
-        }
-        catch (FileNotFoundException e) {
-            System.out.println("Input File Not Found");
-            return false;
-        }
-        catch (NoSuchElementException e) {
-            System.out.println("ERROR - Input File is Empty");
-            return false;
-        }
-        catch (NumberFormatException e) {
-            System.out.println("ERROR - Stat in Incorrect Location");
             return false;
         }
     }
