@@ -94,7 +94,7 @@ public class BattingStats {
      * @return - a boolean value that represents whether the file was
      *           successfully updated
      */
-    public boolean updatePitchingStatsFile() {
+    public boolean updateBattingStatsFile() {
         // get the path to the output file
         String filePathName = System.getProperty("user.dir");
         String os = System.getProperty("os.name");

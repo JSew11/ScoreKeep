@@ -14,12 +14,15 @@ public class BaseballPlayerStats {
     /**
      * Constructor to create a BaseballPlayerStats object using
      *
-     * @param playerName - name of the baseball player whose stats
-     *                     are being kept
+     * @param first_name - first name of the baseball player whose
+     *                     stats are being kept
+     * @param last_name - last name of the baseball player whose
+     *                    stats are being kept
      */
     public BaseballPlayerStats(String first_name, String last_name) {
         statFileName = first_name + last_name;
         pitchingStats = new PitchingStats(statFileName);
+        battingStats = new BattingStats(statFileName);
     }
 
     /**
@@ -30,6 +33,7 @@ public class BaseballPlayerStats {
      */
     public boolean updateStats() {
         if(!pitchingStats.updatePitchingStatsFile()) return false;
+        if(!battingStats.updateBattingStatsFile()) return false;
         return true;
     }
 }
