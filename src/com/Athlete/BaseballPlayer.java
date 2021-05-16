@@ -1,7 +1,7 @@
 package com.Athlete;
 
 import com.BaseballPosition.*;
-import com.BaseballStats.BaseballPlayerStats;
+import com.BaseballStats.*;
 
 import java.util.ArrayList;
 
@@ -84,11 +84,25 @@ public class BaseballPlayer extends Athlete {
     public void removeSecondary_position(BaseballPosition position) {secondary_positions.remove(position);}
 
     /**
-     * Accessor for the baseball player's com.BaseballStats.BaseballPlayerStats object
+     * Accessor for the baseball player's BattingStats object
      *
-     * @return - baseball player's com.BaseballStats.BaseballPlayerStats object
+     * @return - baseball player's BattingStats object
      */
-    public BaseballPlayerStats getStats() {return stats;}
+    public BattingStats getBattingStats() {return stats.getBattingStats();}
+
+    /**
+     * Accessor for the baseball player's FieldingStats object
+     *
+     * @return - baseball player's FieldingStats object
+     */
+    public FieldingStats getFieldingStats() {return stats.getFieldingStats();}
+
+    /**
+     * Accessor for the baseball player's PitchingStats object
+     *
+     * @return - baseball player's PitchingStats object
+     */
+    public PitchingStats getPitchingStats() {return stats.getPitchingStats();}
 
     /**
      * Method to update all of the player's stats files
