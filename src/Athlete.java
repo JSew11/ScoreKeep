@@ -1,5 +1,3 @@
-package com.Athlete;
-
 /**
  * A class for an athlete
  *
@@ -13,7 +11,7 @@ public class Athlete {
     private Integer number;
 
     /**
-     * Constructor for a basic com.Athlete.Athlete object
+     * Constructor for a basic Athlete object
      */
     public Athlete() {
         first_name = "";
@@ -21,7 +19,7 @@ public class Athlete {
     }
 
     /**
-     * Overloaded constructor for a specific com.Athlete.Athlete object
+     * Overloaded constructor for a specific Athlete object
      *
      * @param first_name - athlete's first name
      * @param last_name - athlete's last name

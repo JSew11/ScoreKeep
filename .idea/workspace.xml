@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="586c03a4-3cf4-4e4f-9b68-e67cbf9ca1d7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScoreKeep.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ScoreKeep.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/Athlete.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/Athlete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/BaseballPlayer.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/BaseballPlayer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/package-frame.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/package-summary.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Athlete/BaseballPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Athlete/BaseballPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/BaseballStats/BaseballPlayerStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BaseballStats/BaseballPlayerStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Athlete/Athlete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Athlete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Athlete/BaseballPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaseballPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Athlete/BaseballPlayerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaseballPlayerTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

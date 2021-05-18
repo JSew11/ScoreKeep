@@ -1,5 +1,3 @@
-package com.Athlete;
-
 import com.BaseballPosition.*;
 import com.BaseballStats.*;
 
@@ -12,20 +10,20 @@ import java.util.ArrayList;
  * @version - 1.1.
  * @since - May 8, 2021
  */
-public class BaseballPlayer extends Athlete {
+public class BaseballPlayer extends Athlete implements Comparable<BaseballPlayer> {
     private BaseballPosition primary_position;
     private ArrayList<BaseballPosition> secondary_positions;
     private BaseballPlayerStats stats;
 
     /**
-     * Constructor for a basic com.Athlete.BaseballPlayer object
+     * Constructor for a basic BaseballPlayer object
      */
     public BaseballPlayer() {
         super();
     }
 
     /**
-     * Overloaded constructor for a specific com.Athlete.BaseballPlayer object
+     * Overloaded constructor for a specific BaseballPlayer object
      *
      * @param first_name - player's first name
      * @param last_name  - player's last name
@@ -84,6 +82,24 @@ public class BaseballPlayer extends Athlete {
     public void removeSecondary_position(BaseballPosition position) {secondary_positions.remove(position);}
 
     /**
+     * Method to compare the given BaseballPlayer object to the
+     * current BaseballPlayer object
+     *
+     * @param player - the given BaseballPlayer object to be
+     *                 compared
+     * @return - an int representation of whether the BaseballPlayer
+     *           objects are the same
+     */
+    @Override
+    public int compareTo(BaseballPlayer player) {
+        if(player.getFirst_name().equals(getFirst_name()) &&
+                player.getLast_name().equals(getLast_name()) &&
+                player.getNumber().equals(getNumber()))
+            return 1;
+        else return 0;
+    }
+
+    /**
      * Accessor for the baseball player's BattingStats object
      *
      * @return - baseball player's BattingStats object
@@ -110,7 +126,5 @@ public class BaseballPlayer extends Athlete {
      * @return - boolean value representing whether the files were
      *           updated successfully
      */
-    public boolean updateStats(){
-        return stats.updateStats();
-    }
+    public boolean updateStats() {return stats.updateStats();}
 }

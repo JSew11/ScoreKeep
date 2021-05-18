@@ -1,11 +1,9 @@
-package com.Athlete;
-
 import com.BaseballPosition.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Unit testing for the com.Athlete.BaseballPlayer class
+ * Unit testing for the BaseballPlayer class
  *
  * @author - Joshua Seward
  */
