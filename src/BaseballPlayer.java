@@ -16,14 +16,7 @@ public class BaseballPlayer extends Athlete implements Comparable<BaseballPlayer
     private BaseballPlayerStats stats;
 
     /**
-     * Constructor for a basic BaseballPlayer object
-     */
-    public BaseballPlayer() {
-        super();
-    }
-
-    /**
-     * Overloaded constructor for a specific BaseballPlayer object
+     * Constructor for a BaseballPlayer object
      *
      * @param first_name - player's first name
      * @param last_name  - player's last name
@@ -93,8 +86,7 @@ public class BaseballPlayer extends Athlete implements Comparable<BaseballPlayer
     @Override
     public int compareTo(BaseballPlayer player) {
         if(player.getFirst_name().equals(getFirst_name()) &&
-                player.getLast_name().equals(getLast_name()) &&
-                player.getNumber().equals(getNumber()))
+                player.getLast_name().equals(getLast_name()))
             return 1;
         else return 0;
     }
