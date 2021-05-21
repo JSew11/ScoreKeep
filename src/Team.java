@@ -13,19 +13,8 @@ public class Team {
     private Integer losses;
 
     /**
-     * Constructor for a basic Team object
-     */
-    public Team() {
-        location = "Team Location";
-        name = "Team Name";
-        abbreviation = "ABRV";
-        wins = 0;
-        losses = 0;
-    }
-
-    /**
-     * Constructor for a specific Team object based
-     * on a given location and name
+     * Constructor for a Team object based on a
+     * given location and name
      *
      * @param location - given location
      * @param name - given name
