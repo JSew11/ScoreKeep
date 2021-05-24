@@ -3,6 +3,7 @@ import com.Exceptions.*;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * A class for a baseball team
@@ -31,11 +32,44 @@ public class BaseballTeam extends Team {
         filename = location + name;
     }
 
+    private boolean readTeamFile() {
+        // get the path to the input file
+        String filePathName = System.getProperty("user.dir");
+        String os = System.getProperty("os.name");
+        if(os.contains("Windows"))
+            filePathName = filePathName + "\\baseballData\\teams\\" + filename;
+        else filePathName = filePathName + "/baseballData/teams/" + filename;
+        File inputFile = new File(filePathName);
+        try {
+            Scanner iFile = new Scanner(inputFile);
+            iFile.nextLine(); setLocation(iFile.nextLine());
+            iFile.nextLine(); setName(iFile.nextLine());
+            iFile.nextLine(); setAbbreviation(iFile.nextLine());
+            iFile.nextLine(); setWins(iFile.nextInt());
+            iFile.nextLine(); setLosses(iFile.nextInt());
+            iFile.nextLine(); headCoach = new BaseballCoach(iFile.next(), iFile.next());
+            iFile.nextLine(); String astCoachFirst = iFile.next();
+            while(!astCoachFirst.equals("Roster:")) {
+                String astCoachLast = iFile.next();
+                assistantCoaches.add(new BaseballCoach(astCoachFirst,astCoachLast));
+                astCoachFirst = iFile.next();
+            }
+            return true;
+        }
+        catch(FileNotFoundException e) {
+            System.out.println("Error - Input File not found");
+            return false;
+        }
+    }
+
     /**
      * Method to update the team file using the current values of the
      * member variables
+     *
+     * @return - a boolean value that represents whether the team file
+     *           was updated successfully
      */
-    private void updateTeamFile() {
+    public boolean updateTeamFile() {
         // get the path to the output file
         String filePathName = System.getProperty("user.dir");
         String os = System.getProperty("os.name");
@@ -56,15 +90,18 @@ public class BaseballTeam extends Team {
             oFile.println("Assistant Coaches:");
             for(BaseballCoach assistantCoach : assistantCoaches)
                 oFile.println(assistantCoach.getFirst_name() + " " + assistantCoach.getLast_name());
-            oFile.println("Roster");
+            oFile.println("Roster:");
             for(BaseballPlayer player : roster)
                 oFile.println(player.getFirst_name() + " " + player.getLast_name() + " " + player.getNumber());
+            return true;
         }
         catch (FileNotFoundException e) {
             System.out.println("Output file does not exist");
+            return false;
         }
         catch (IOException e) {
             System.out.println("ERROR - Problem creating output file");
+            return false;
         }
     }
 

@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 /**
  * A class for a team
  *
@@ -22,7 +24,8 @@ public class Team {
     public Team(String location, String name) {
         this.location = location;
         this.name = name;
-        this.abbreviation = location.substring(0, 2).toUpperCase();
+        if(location.length() > 4) this.abbreviation = location.substring(0, 3).toUpperCase();
+        else this.abbreviation = location.toUpperCase();
     }
 
     // attribute accessors
@@ -35,7 +38,11 @@ public class Team {
     // attribute mutators
     public void setLocation(String location) {this.location = location;}
     public void setName(String name) {this.name = name;}
-    public void setAbbreviation(String abbreviation) {this.abbreviation = abbreviation;}
+    public void setAbbreviation(String abbreviation) {
+        if(abbreviation.length() > 4)
+            System.out.println("Abbreviations must be 4 characters or less");
+        else this.abbreviation = abbreviation.toUpperCase();
+    }
     public void setWins(int wins) {this.wins = wins;}
     public void setLosses (int losses) {this.losses = losses;}
 }
