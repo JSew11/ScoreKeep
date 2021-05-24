@@ -8,6 +8,7 @@
 public class BaseballCoach implements Comparable<BaseballCoach>{
     private String first_name;
     private String last_name;
+    private Integer number;
     private Integer wins;
     private Integer losses;
 
@@ -27,12 +28,14 @@ public class BaseballCoach implements Comparable<BaseballCoach>{
     // attribute accessors
     public String getFirst_name() {return first_name;}
     public String getLast_name() {return last_name;}
+    public Integer getNumber() {return number;}
     public Integer getWins() {return wins;}
     public Integer getLosses() {return losses;}
 
     // attribute mutators
     public void setFirst_name(String first_name) {this.first_name = first_name;}
     public void setLast_name(String last_name) {this.last_name = last_name;}
+    public void setNumber(int number) {this.number = number;}
     public void setWins(int wins) {this.wins = wins;}
     public void setLosses(int losses) {this.losses = losses;}
 

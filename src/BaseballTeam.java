@@ -1,5 +1,7 @@
 import com.BaseballPosition.*;
 import com.Exceptions.*;
+
+import java.io.*;
 import java.util.ArrayList;
 
 /**
@@ -10,9 +12,10 @@ import java.util.ArrayList;
  * @since - May 19, 2021
  */
 public class BaseballTeam extends Team {
-    private ArrayList<BaseballPlayer> roster;
     private BaseballCoach headCoach;
     private ArrayList<BaseballCoach> assistantCoaches;
+    private ArrayList<BaseballPlayer> roster;
+    private String filename;
 
     /**
      * Constructor for a BaseballTeam object based on a
@@ -24,6 +27,45 @@ public class BaseballTeam extends Team {
     public BaseballTeam(String location, String name) {
         super(location, name);
         roster = new ArrayList<BaseballPlayer>();
+        assistantCoaches = new ArrayList<BaseballCoach>();
+        filename = location + name;
+    }
+
+    /**
+     * Method to update the team file using the current values of the
+     * member variables
+     */
+    private void updateTeamFile() {
+        // get the path to the output file
+        String filePathName = System.getProperty("user.dir");
+        String os = System.getProperty("os.name");
+        if(os.contains("Windows"))
+            filePathName = filePathName + "\\baseballData\\teams\\" + filename;
+        else filePathName = filePathName + "/baseballData/teams/" + filename;
+        try {
+            FileWriter outputFile = new FileWriter(filePathName);
+            PrintWriter oFile = new PrintWriter(outputFile);
+            // write the current team info to the output file
+            oFile.println("Team Location:"); oFile.println(getLocation());
+            oFile.println("Team Name:"); oFile.println(getName());
+            oFile.println("Abbreviation:"); oFile.println(getAbbreviation());
+            oFile.println("Wins:"); oFile.println(getWins());
+            oFile.println("Losses:"); oFile.println(getLosses());
+            oFile.println("Head Coach:");
+            oFile.println(headCoach.getFirst_name() + " " + headCoach.getLast_name());
+            oFile.println("Assistant Coaches:");
+            for(BaseballCoach assistantCoach : assistantCoaches)
+                oFile.println(assistantCoach.getFirst_name() + " " + assistantCoach.getLast_name());
+            oFile.println("Roster");
+            for(BaseballPlayer player : roster)
+                oFile.println(player.getFirst_name() + " " + player.getLast_name() + " " + player.getNumber());
+        }
+        catch (FileNotFoundException e) {
+            System.out.println("Output file does not exist");
+        }
+        catch (IOException e) {
+            System.out.println("ERROR - Problem creating output file");
+        }
     }
 
     /**
@@ -167,9 +209,9 @@ public class BaseballTeam extends Team {
         }
     }
 
-    // accessor for the headCoach
+    // attribute accessors
     public BaseballCoach getHeadCoach() {return headCoach;}
 
-    // mutator for the headCoach
+    // attribute mutators
     public void setHeadCoach(BaseballCoach headCoach) {this.headCoach = headCoach;}
 }
