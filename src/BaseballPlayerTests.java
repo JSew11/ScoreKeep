@@ -1,4 +1,5 @@
 import com.BaseballPosition.*;
+import com.Exceptions.PlayerNotFoundException;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -42,6 +43,8 @@ public class BaseballPlayerTests {
         // check that the same position that was added as a secondary position
         // cannot be added again
         assertEquals(false, player.addSecondary_position(firstBase));
+        BaseballPosition shortstop = new Shortstop();
+        player.addSecondary_position(shortstop);
         player.updateBaseballPlayer();
     }
 
@@ -61,5 +64,20 @@ public class BaseballPlayerTests {
     @Test
     public void updatePlayerTest() {
         assertEquals(true, player.updateBaseballPlayer());
+    }
+
+    @Test
+    public void getExistingPlayerTest() {
+        try {
+            BaseballPlayer testPlayer = new BaseballPlayer("Joshua", "Seward", 11);
+            assertEquals("Joshua", testPlayer.getFirst_name());
+            assertEquals("Seward", testPlayer.getLast_name());
+            assertEquals(11, testPlayer.getNumber());
+            BaseballPosition starter = new StartingPitcher();
+            assertEquals(0, testPlayer.getPrimary_position().compareTo(starter));
+            //assertEquals(1, testPlayer.getSecondary_positions().size());
+        } catch (PlayerNotFoundException e) {
+            System.out.println("ERROR - Test PLayer could not be created");
+        }
     }
 }
