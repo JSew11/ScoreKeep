@@ -5,25 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="586c03a4-3cf4-4e4f-9b68-e67cbf9ca1d7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseballStats/JoshuaSeward_batting.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseballStats/JoshuaSeward_fielding.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseballStats/JoshuaSeward_pitching.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ScoreKeep/BaseballCoach.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ScoreKeep/BaseballCoach.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ScoreKeep/BaseballPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ScoreKeep/BaseballPlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ScoreKeep/BaseballPlayerTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ScoreKeep/BaseballPlayerTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ScoreKeep/BaseballTeam.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ScoreKeep/BaseballTeam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ScoreKeep/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ScoreKeep/Team.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BaseballCoach.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaseballCoach.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BaseballPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaseballPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baseballData/players/TestPlayer/TestPlayer.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baseballData/players/TestPlayer/stats/TestPlayer_batting.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baseballData/players/TestPlayer/stats/TestPlayer_fielding.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baseballData/players/TestPlayer/stats/TestPlayer_pitching.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BaseballPlayerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaseballPlayerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BaseballTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaseballTeam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BaseballTeamTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaseballTeamTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Team.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/BaseballStats/BattingCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BaseballStats/BattingCalc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/BaseballStats/BattingStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BaseballStats/BattingStats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/BaseballStats/FieldingStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BaseballStats/FieldingStats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/BaseballStats/PitchingStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/BaseballStats/PitchingStats.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +50,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
-  <component name="RunManager" selected="JUnit.BattingStatsTest">
+  <component name="RunManager" selected="JUnit.BaseballPlayerTests">
     <configuration name="BaseballPlayerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ScoreKeep" />
       <option name="PACKAGE_NAME" value="" />
@@ -131,10 +117,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BaseballPlayerTests" />
         <item itemvalue="JUnit.BattingStatsTest" />
         <item itemvalue="JUnit.PitchingStatsTest" />
         <item itemvalue="JUnit.FieldingStatsTest" />
-        <item itemvalue="JUnit.BaseballPlayerTests" />
         <item itemvalue="JUnit.BaseballPlayerTests.updatePlayerTest" />
       </list>
     </recent_temporary>

@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author - Joshua Seward
  */
 public class BaseballPlayerTests {
-    private BaseballPosition startingPos = new LeftField();
+    private BaseballPosition startingPos = new StartingPitcher();
     private BaseballPlayer player =
             new BaseballPlayer("Joshua", "Seward", 11, startingPos);
 
@@ -21,7 +21,7 @@ public class BaseballPlayerTests {
     @Test
     public void setPrimaryPositionTest() {
         // create a new BaseballPosition object
-        BaseballPosition starter = new StartingPitcher();
+        BaseballPosition starter = new LeftField();
         // change the player's primaryPosition
         player.setPrimary_position(starter);
         // check if the player's primaryPosition is correct after the change
@@ -42,6 +42,7 @@ public class BaseballPlayerTests {
         // check that the same position that was added as a secondary position
         // cannot be added again
         assertEquals(false, player.addSecondary_position(firstBase));
+        player.updateBaseballPlayer();
     }
 
     @Test
