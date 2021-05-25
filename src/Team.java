@@ -26,6 +26,8 @@ public class Team {
         this.name = name;
         if(location.length() > 4) this.abbreviation = location.substring(0, 3).toUpperCase();
         else this.abbreviation = location.toUpperCase();
+        wins = 0;
+        losses = 0;
     }
 
     // attribute accessors

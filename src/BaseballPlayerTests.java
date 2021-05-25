@@ -8,44 +8,44 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author - Joshua Seward
  */
 public class BaseballPlayerTests {
-    private BaseballPosition startingPos = new Pitcher();
+    private BaseballPosition startingPos = new LeftField();
     private BaseballPlayer player =
-            new BaseballPlayer("Test", "Player", 0, startingPos);
+            new BaseballPlayer("Joshua", "Seward", 11, startingPos);
 
     @Test
-    void getPrimaryPositionTest() {
+    public void getPrimaryPositionTest() {
         // check that the constructor correctly sets the primaryPosition
         assertEquals(player.getPrimary_position(), startingPos);
     }
 
     @Test
-    void setPrimaryPositionTest() {
+    public void setPrimaryPositionTest() {
         // create a new BaseballPosition object
-        BaseballPosition leftField = new LeftField();
+        BaseballPosition starter = new StartingPitcher();
         // change the player's primaryPosition
-        player.setPrimary_position(leftField);
+        player.setPrimary_position(starter);
         // check if the player's primaryPosition is correct after the change
-        assertEquals(player.getPrimary_position(), leftField);
+        assertEquals(player.getPrimary_position(), starter);
     }
 
     @Test
-    void addSecondaryPositionTest() {
+    public void addSecondaryPositionTest() {
         // create new Positions to add to the player
         BaseballPosition curPos = player.getPrimary_position();
-        BaseballPosition centerField = new CenterField();
+        BaseballPosition firstBase = new FirstBase();
         // check that the current primary primaryPosition cannot be added
         // as a secondary position
         assertEquals(false, player.addSecondary_position(curPos));
         // check that a different position can be added as a secondary position
-        assertEquals(true, player.addSecondary_position(centerField));
-        assertEquals(true, player.getSecondary_positions().contains(centerField));
+        assertEquals(true, player.addSecondary_position(firstBase));
+        assertEquals(true, player.getSecondary_positions().contains(firstBase));
         // check that the same position that was added as a secondary position
         // cannot be added again
-        assertEquals(false, player.addSecondary_position(centerField));
+        assertEquals(false, player.addSecondary_position(firstBase));
     }
 
     @Test
-    void removeSecondaryPositionTest() {
+    public void removeSecondaryPositionTest() {
         BaseballPosition rightField = new RightField();
         // add a new position to the secondaryPositions list
         player.addSecondary_position(rightField);
@@ -55,5 +55,10 @@ public class BaseballPlayerTests {
         // check that the secondaryPlayers list does not contain
         // the position that was removed
         assertEquals(false, player.getSecondary_positions().contains(rightField));
+    }
+
+    @Test
+    public void updatePlayerTest() {
+        assertEquals(true, player.updateBaseballPlayer());
     }
 }

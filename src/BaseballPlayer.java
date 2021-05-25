@@ -1,19 +1,20 @@
 import com.BaseballPosition.*;
 import com.BaseballStats.*;
-
-import java.util.ArrayList;
+import java.io.*;
+import java.util.*;
 
 /**
  * A class for a baseball player
  *
  * @author - Joshua Seward
- * @version - 1.1.
+ * @version - 1.2.0
  * @since - May 8, 2021
  */
 public class BaseballPlayer extends Athlete implements Comparable<BaseballPlayer> {
     private BaseballPosition primary_position;
     private ArrayList<BaseballPosition> secondary_positions;
     private BaseballPlayerStats stats;
+    private String filename;
 
     /**
      * Constructor for a BaseballPlayer object
@@ -28,6 +29,7 @@ public class BaseballPlayer extends Athlete implements Comparable<BaseballPlayer
         primary_position = position;
         secondary_positions = new ArrayList<BaseballPosition>();
         stats = new BaseballPlayerStats(first_name, last_name);
+        filename = first_name + last_name + ".txt";
     }
 
     /**
@@ -118,5 +120,53 @@ public class BaseballPlayer extends Athlete implements Comparable<BaseballPlayer
      * @return - boolean value representing whether the files were
      *           updated successfully
      */
-    public boolean updateStats() {return stats.updateStats();}
+    public boolean updateBaseballPlayer() {
+        // create the path to the player's folder
+        String filePathName = System.getProperty("user.dir");
+        String os = System.getProperty("os.name");
+        String folderName = getFirst_name() + getLast_name();
+        if(os.contains("Windows")) {
+            filePathName = filePathName + "\\baseballData\\players\\";
+            File playerDir = new File(filePathName + folderName + "\\");
+            if(!playerDir.exists()){
+                playerDir.mkdirs();
+                File statFolder = new File(filePathName + folderName + "\\stats\\");
+                statFolder.mkdirs();
+            }
+            filePathName = filePathName + "\\" + folderName + "\\" + filename;
+        }
+        else{
+            filePathName = filePathName + "/baseballData/players/";
+            File playerDir = new File(filePathName + folderName + "/");
+            if(!playerDir.exists()){
+                playerDir.mkdirs();
+                File statFolder = new File(filePathName + folderName + "/stats/");
+                statFolder.mkdirs();
+            }
+            filePathName = filePathName + "/" + folderName + "/" + filename;
+        }
+        // try to write the output file
+        try {
+            FileWriter outputFile = new FileWriter(filePathName);
+            PrintWriter oFile = new PrintWriter(outputFile);
+            oFile.println("First Name:"); oFile.println(getFirst_name());
+            oFile.println("Last_Name:"); oFile.println(getLast_name());
+            oFile.println("Number:"); oFile.println(getNumber());
+            oFile.println("Primary Position:"); oFile.println(primary_position.toString());
+            if(secondary_positions.size() > 0) {
+                oFile.println("SecondaryPositions:");
+                for (int i = 0; i < secondary_positions.size() - 1; ++i) {
+                    oFile.print(secondary_positions.get(i).toString());
+                    oFile.print(", ");
+                }
+                oFile.println(secondary_positions.get(secondary_positions.size() - 1).toString());
+            }
+            oFile.close();
+        }
+        catch (IOException e) {
+            System.out.println("ERROR - Problem creating file");
+            return false;
+        }
+        return stats.updateStats();
+    }
 }

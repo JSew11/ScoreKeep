@@ -62,6 +62,7 @@ public class BattingCalc {
      * @return - slugging percentage
      */
     public double SLG(int hits, int doubles, int triples, int homeRuns, int atBats) {
+        if(atBats == 0) return 0.0;
         return ((double) TB(hits,doubles,triples,homeRuns))/((double) atBats);
     }
 

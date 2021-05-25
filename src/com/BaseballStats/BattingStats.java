@@ -8,7 +8,7 @@ import java.util.*;
  * A class for commonly recorded batting stats
  *
  * @author - Joshua Seward
- * @version - 1.0.0
+ * @version - 1.1.0
  * @since - May 15, 2021
  */
 public class BattingStats {
@@ -20,8 +20,9 @@ public class BattingStats {
     private int sacrificeHits, sacrificeFlies, intentionalWalks;
     // object to calculate more complex stats
     private BattingCalc battingCalc;
-    // input/output file name
+    // input/output file name and folder location
     private String statsFileName;
+    private String statsFolderLoc;
 
     /**
      * Constructor to instantiate the stored values for each statistic based
@@ -31,6 +32,7 @@ public class BattingStats {
      */
     public BattingStats(String statsFileName) {
         this.statsFileName = statsFileName + "_batting.txt";
+        this.statsFolderLoc = statsFileName;
 
         if(!readInputFile()){
             // the file does not exist, so set the stored values to 0
@@ -56,8 +58,8 @@ public class BattingStats {
         String filePathName = System.getProperty("user.dir");
         String os = System.getProperty("os.name");
         if(os.contains("Windows"))
-            filePathName = filePathName + "\\baseballStats\\" + statsFileName;
-        else filePathName = filePathName + "/baseballStats/" + statsFileName;
+            filePathName = filePathName + "\\baseballData\\players\\" + statsFolderLoc + "\\stats\\" + statsFileName;
+        else filePathName = filePathName + "/baseballData/players/" + statsFolderLoc + "/stats/" + statsFileName;
         File inputFile = new File(filePathName);
         try (Scanner iFile = new Scanner(inputFile)) {
             // read the data from the file into the com.BaseballStats.PitchingStats object
@@ -107,8 +109,8 @@ public class BattingStats {
         String filePathName = System.getProperty("user.dir");
         String os = System.getProperty("os.name");
         if(os.contains("Windows"))
-            filePathName = filePathName + "\\baseballStats\\" + statsFileName;
-        else filePathName = filePathName + "/baseballStats/" + statsFileName;
+            filePathName = filePathName + "\\baseballData\\players\\" + statsFolderLoc + "\\stats\\" + statsFileName;
+        else filePathName = filePathName + "/baseballData/players/" + statsFolderLoc + "/stats/" + statsFileName;
         try {
             FileWriter outputFile = new FileWriter(filePathName);
             PrintWriter oFile = new PrintWriter(outputFile);

@@ -12,8 +12,9 @@ public class FieldingStats {
     private int putouts, assists, errors, doublePlays;
     // object to calculate more complex pitching stats
     private FieldingCalc fieldingCalc;
-    // input/output file name
+    // input/output file name and folder location
     private String statsFileName;
+    private String statsFolderLoc;
 
     /**
      * Constructor to instantiate the stored values for each statistic based
@@ -23,6 +24,7 @@ public class FieldingStats {
      */
     public FieldingStats(String statsFileName) {
         this.statsFileName = statsFileName + "_fielding.txt";
+        this.statsFolderLoc = statsFileName;
 
         if(!readInputFile()) {
             // the file does not exist, so set the stored values to 0
@@ -45,8 +47,8 @@ public class FieldingStats {
         String filePathName = System.getProperty("user.dir");
         String os = System.getProperty("os.name");
         if(os.contains("Windows"))
-            filePathName = filePathName + "\\baseballStats\\" + statsFileName;
-        else filePathName = filePathName + "/baseballStats/" + statsFileName;
+            filePathName = filePathName + "\\baseballData\\players\\" + statsFolderLoc + "\\stats\\" + statsFileName;
+        else filePathName = filePathName + "/baseballData/players/" + statsFolderLoc + "/stats/" + statsFileName;
         File inputFile = new File(filePathName);
         try (Scanner iFile = new Scanner(inputFile)) {
             iFile.nextLine(); gamesPlayed = Integer.parseInt(iFile.nextLine());
@@ -86,8 +88,8 @@ public class FieldingStats {
         String filePathName = System.getProperty("user.dir");
         String os = System.getProperty("os.name");
         if(os.contains("Windows"))
-            filePathName = filePathName + "\\baseballStats\\" + statsFileName;
-        else filePathName = filePathName + "/baseballStats/" + statsFileName;
+            filePathName = filePathName + "\\baseballData\\players\\" + statsFolderLoc + "\\stats\\" + statsFileName;
+        else filePathName = filePathName + "/baseballData/players/" + statsFolderLoc + "/stats/" + statsFileName;
         try {
             FileWriter outputFile = new FileWriter(filePathName);
             PrintWriter oFile = new PrintWriter(outputFile);

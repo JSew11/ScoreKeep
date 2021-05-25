@@ -1,3 +1,6 @@
+import java.io.*;
+import java.util.*;
+
 /**
  * A class for a baseball coach
  *
@@ -11,6 +14,7 @@ public class BaseballCoach implements Comparable<BaseballCoach>{
     private Integer number;
     private Integer wins;
     private Integer losses;
+    private String filename;
 
     /**
      * Constructor for a BaseballCoach object based on a
@@ -22,7 +26,76 @@ public class BaseballCoach implements Comparable<BaseballCoach>{
     public BaseballCoach(String first_name, String last_name) {
         this.first_name = first_name;
         this.last_name = last_name;
-        wins = 0; losses = 0;
+        filename = first_name + last_name + ".txt";
+        if(!readCoachFile()) {
+            number = 0;
+            wins = 0; losses = 0;
+        }
+    }
+
+    /**
+     * Method to read the coach file and store the data in the member
+     * variables
+     *
+     * @return - a boolean value that represents whether the file was
+     *           read successfully
+     */
+    private boolean readCoachFile() {
+        // get the path to the input file
+        String filePathName = System.getProperty("user.dir");
+        String os = System.getProperty("os.name");
+        if(os.contains("Windows"))
+            filePathName = filePathName + "\\baseballData\\coaches\\" + filename;
+        else filePathName = filePathName + "/baseballData/coaches/" + filename;
+        File inputFile = new File(filePathName);
+        try {
+            Scanner iFile = new Scanner(inputFile);
+            iFile.nextLine(); first_name = iFile.nextLine();
+            iFile.nextLine(); last_name = iFile.nextLine();
+            iFile.nextLine(); number = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); wins = Integer.parseInt(iFile.nextLine());
+            iFile.nextLine(); losses = Integer.parseInt(iFile.nextLine());
+            return true;
+        }
+        catch (FileNotFoundException e) {
+            System.out.println("Input file not found");
+            return false;
+        }
+    }
+
+    /**
+     * Method to update the coach file using the current values of the
+     * member variables
+     *
+     * @return - a boolean value that represents whether the team file
+     *           was updated successfully
+     */
+    public boolean updateCoach() {
+        // get the path to the output file
+        String filePathName = System.getProperty("user.dir");
+        String os = System.getProperty("os.name");
+        if(os.contains("Windows"))
+            filePathName = filePathName + "\\baseballData\\coaches\\" + filename;
+        else filePathName = filePathName + "/baseballData/coaches/" + filename;
+        try{
+            FileWriter outputFile = new FileWriter(filePathName);
+            PrintWriter oFile = new PrintWriter(outputFile);
+            oFile.println("First Name:"); oFile.println(first_name);
+            oFile.println("Last Name:"); oFile.println(last_name);
+            oFile.println("Number:"); oFile.println(number);
+            oFile.println("Wins:"); oFile.println(wins);
+            oFile.println("Losses:"); oFile.println(losses);
+            oFile.close();
+            return true;
+        }
+        catch (FileNotFoundException e) {
+            System.out.println("Output file does not exist");
+            return false;
+        }
+        catch (IOException e) {
+            System.out.println("ERROR - Problem creating output file");
+            return false;
+        }
     }
 
     // attribute accessors

@@ -20,4 +20,27 @@ public class BaseballTeamTests {
         assertEquals("Mars", testTeam.getLocation());
         assertEquals("Aliens", testTeam.getName());
     }
+
+    @Test
+    public void updateTeamTest() {
+        testTeam = new BaseballTeam("Mitty", "Monarchs");
+        testTeam.setAbbreviation("amhs");
+        assertEquals("AMHS", testTeam.getAbbreviation());
+        BaseballCoach testCoach = new BaseballCoach("Brian", "Yocke");
+        testCoach.setNumber(39);
+        testTeam.setHeadCoach(testCoach);
+        assertEquals(testCoach, testTeam.getHeadCoach());
+        testTeam.addAssistantCoach(new BaseballCoach("Jeff", "Harper"));
+        testTeam.addAssistantCoach(new BaseballCoach("Jeremy", "Advincula"));
+        testTeam.addAssistantCoach(new BaseballCoach("Danny", "Steinstra"));
+        assertEquals(true, testTeam.updateTeamFile());
+    }
+
+    @Test
+    public void existingTeamTest() {
+        testTeam = new BaseballTeam("Mitty", "Monarchs");
+        assertEquals("Mitty", testTeam.getLocation());
+        assertEquals("Monarchs", testTeam.getName());
+        assertEquals("AMHS", testTeam.getAbbreviation());
+    }
 }

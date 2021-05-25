@@ -2,8 +2,7 @@ import com.BaseballPosition.*;
 import com.Exceptions.*;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * A class for a baseball team
@@ -29,9 +28,16 @@ public class BaseballTeam extends Team {
         super(location, name);
         roster = new ArrayList<BaseballPlayer>();
         assistantCoaches = new ArrayList<BaseballCoach>();
-        filename = location + name;
+        filename = location + name + ".txt";
     }
 
+    /**
+     * Method to read the team file and store the data in the member
+     * variables
+     *
+     * @return - boolean value that represents whether the file was
+     *           read successfully
+     */
     private boolean readTeamFile() {
         // get the path to the input file
         String filePathName = System.getProperty("user.dir");
@@ -45,8 +51,8 @@ public class BaseballTeam extends Team {
             iFile.nextLine(); setLocation(iFile.nextLine());
             iFile.nextLine(); setName(iFile.nextLine());
             iFile.nextLine(); setAbbreviation(iFile.nextLine());
-            iFile.nextLine(); setWins(iFile.nextInt());
-            iFile.nextLine(); setLosses(iFile.nextInt());
+            iFile.nextLine(); setWins(Integer.parseInt(iFile.nextLine()));
+            iFile.nextLine(); setLosses(Integer.parseInt(iFile.nextLine()));
             iFile.nextLine(); headCoach = new BaseballCoach(iFile.next(), iFile.next());
             iFile.nextLine(); String astCoachFirst = iFile.next();
             while(!astCoachFirst.equals("Roster:")) {
@@ -85,14 +91,21 @@ public class BaseballTeam extends Team {
             oFile.println("Abbreviation:"); oFile.println(getAbbreviation());
             oFile.println("Wins:"); oFile.println(getWins());
             oFile.println("Losses:"); oFile.println(getLosses());
+            // update the head coach object
             oFile.println("Head Coach:");
             oFile.println(headCoach.getFirst_name() + " " + headCoach.getLast_name());
+            headCoach.updateCoach();
+            // update the assistant coach objects
             oFile.println("Assistant Coaches:");
-            for(BaseballCoach assistantCoach : assistantCoaches)
+            for(BaseballCoach assistantCoach : assistantCoaches) {
                 oFile.println(assistantCoach.getFirst_name() + " " + assistantCoach.getLast_name());
+                assistantCoach.updateCoach();
+            }
+            // update the player objects
             oFile.println("Roster:");
             for(BaseballPlayer player : roster)
                 oFile.println(player.getFirst_name() + " " + player.getLast_name() + " " + player.getNumber());
+            oFile.close();
             return true;
         }
         catch (FileNotFoundException e) {

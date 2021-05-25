@@ -1,0 +1,64 @@
+Pitches Thrown: 
+0
+Strikes Thrown: 
+0
+Balls Thrown: 
+0
+Games Pitched (GP): 
+0
+Games Started (GS): 
+0
+Games Finished (GF): 
+0
+Complete Games (CG): 
+0
+Wins (W):
+0
+Losses (L): 
+0
+Shutouts (SO): 
+0
+Saves (SV): 
+0
+Innings Pitched (IP): 
+0.0
+Hits (H): 
+0
+Runs (R): 
+0
+Earned Runs (ER): 
+0
+Home Runs (HR): 
+0
+Walks (BB): 
+0
+Intentional Walks (IBB): 
+0
+Strikeouts (K): 
+0
+Hit By Pitch (HBP): 
+0
+Balks (BK): 
+0
+Pick Offs (PO): 
+0
+Wild Pitches (WP): 
+0
+Batters Faced (BF): 
+0
+Strike Percent: 
+0
+Win-Loss Percent: 
+0
+Earned-Runs Average (ERA): 
+0
+WHIP: 
+0
+Hits Per 9 Innings (H9): 
+0
+Home Runs Per 9 Innings (HR9): 
+0
+Walks Per 9 Innings (BB9): 
+0
+Strikeouts Per 9 Innings (K9): 
+0
