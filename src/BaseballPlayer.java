@@ -1,6 +1,7 @@
 import com.BaseballPosition.*;
 import com.BaseballStats.*;
 import com.Exceptions.PlayerNotFoundException;
+import com.GenericSports.Athlete;
 
 import java.io.*;
 import java.util.*;

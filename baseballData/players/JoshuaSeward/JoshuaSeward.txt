@@ -8,3 +8,4 @@ Primary Position:
 SP
 SecondaryPositions:
 1B
+SS

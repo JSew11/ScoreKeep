@@ -1,5 +1,6 @@
 import com.BaseballPosition.*;
 import com.Exceptions.*;
+import com.GenericSports.Team;
 
 import java.io.*;
 import java.util.*;
@@ -86,8 +87,8 @@ public class BaseballTeam extends Team {
             FileWriter outputFile = new FileWriter(filePathName);
             PrintWriter oFile = new PrintWriter(outputFile);
             // write the current team info to the output file
-            oFile.println("Team Location:"); oFile.println(getLocation());
-            oFile.println("Team Name:"); oFile.println(getName());
+            oFile.println("com.GenericSports.Team Location:"); oFile.println(getLocation());
+            oFile.println("com.GenericSports.Team Name:"); oFile.println(getName());
             oFile.println("Abbreviation:"); oFile.println(getAbbreviation());
             oFile.println("Wins:"); oFile.println(getWins());
             oFile.println("Losses:"); oFile.println(getLosses());

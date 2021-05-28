@@ -1,6 +1,6 @@
-Team Location:
+com.GenericSports.Team Location:
 Mitty
-Team Name:
+com.GenericSports.Team Name:
 Monarchs
 Abbreviation:
 AMHS

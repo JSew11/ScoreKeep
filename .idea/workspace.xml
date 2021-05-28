@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="586c03a4-3cf4-4e4f-9b68-e67cbf9ca1d7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/baseballData/players/TestPlayer/TestPlayer.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseballData/players/TestPlayer/stats/TestPlayer_batting.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseballData/players/TestPlayer/stats/TestPlayer_fielding.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baseballData/players/TestPlayer/stats/TestPlayer_pitching.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BaseballPlayerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaseballPlayerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baseballData/players/JoshuaSeward/JoshuaSeward.txt" beforeDir="false" afterPath="$PROJECT_DIR$/baseballData/players/JoshuaSeward/JoshuaSeward.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baseballData/teams/MittyMonarchs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/baseballData/teams/MittyMonarchs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/Athlete.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/Athlete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/BaseballPlayer.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/BaseballPlayer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ScoreKeep/BaseballPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ScoreKeep/BaseballPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ScoreKeep/BaseballPlayerTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ScoreKeep/BaseballPlayerTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Athlete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GenericSports/Athlete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BaseballPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaseballPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BaseballTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BaseballTeam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GenericSports/Team.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,11 +67,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BaseballPlayerTests.updatePlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BaseballPlayerTests.addSecondaryPositionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ScoreKeep" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="BaseballPlayerTests" />
-      <option name="METHOD_NAME" value="updatePlayerTest" />
+      <option name="METHOD_NAME" value="addSecondaryPositionTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BaseballPlayerTests.getExistingPlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ScoreKeep" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BaseballPlayerTests" />
+      <option name="METHOD_NAME" value="getExistingPlayerTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -80,21 +97,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.BaseballStats" />
       <option name="MAIN_CLASS_NAME" value="com.BaseballStats.BattingStatsTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FieldingStatsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ScoreKeep" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.BaseballStats.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.BaseballStats" />
-      <option name="MAIN_CLASS_NAME" value="com.BaseballStats.FieldingStatsTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -118,10 +120,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.BaseballPlayerTests" />
+        <item itemvalue="JUnit.BaseballPlayerTests.getExistingPlayerTest" />
+        <item itemvalue="JUnit.BaseballPlayerTests.addSecondaryPositionTest" />
         <item itemvalue="JUnit.BattingStatsTest" />
         <item itemvalue="JUnit.PitchingStatsTest" />
-        <item itemvalue="JUnit.FieldingStatsTest" />
-        <item itemvalue="JUnit.BaseballPlayerTests.updatePlayerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -147,5 +149,15 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
