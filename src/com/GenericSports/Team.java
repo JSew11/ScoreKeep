@@ -1,7 +1,5 @@
 package com.GenericSports;
 
-import java.util.Locale;
-
 /**
  * A class for a team
  *
@@ -17,7 +15,7 @@ public class Team {
     private Integer losses;
 
     /**
-     * Constructor for a com.GenericSports.Team object based on a
+     * Constructor for a Team object based on a
      * given location and name
      *
      * @param location - given location

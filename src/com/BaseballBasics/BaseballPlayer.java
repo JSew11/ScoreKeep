@@ -1,3 +1,5 @@
+package com.BaseballBasics;
+
 import com.BaseballPosition.*;
 import com.BaseballStats.*;
 import com.Exceptions.PlayerNotFoundException;
@@ -209,12 +211,12 @@ public class BaseballPlayer extends Athlete implements Comparable<BaseballPlayer
     public void removeSecondary_position(BaseballPosition position) {secondary_positions.remove(position);}
 
     /**
-     * Method to compare the given BaseballPlayer object to the
-     * current BaseballPlayer object
+     * Method to compare the given com.BaseballBasics.BaseballPlayer object to the
+     * current com.BaseballBasics.BaseballPlayer object
      *
-     * @param player - the given BaseballPlayer object to be
+     * @param player - the given com.BaseballBasics.BaseballPlayer object to be
      *                 compared
-     * @return - an int representation of whether the BaseballPlayer
+     * @return - an int representation of whether the com.BaseballBasics.BaseballPlayer
      *           objects are the same
      */
     @Override

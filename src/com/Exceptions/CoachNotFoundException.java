@@ -1,7 +1,7 @@
 package com.Exceptions;
 
 /**
- * An exception for when the desired BaseballCoach object
+ * An exception for when the desired com.BaseballBasics.BaseballCoach object
  * does not exist
  *
  * @author - Joshua Seward

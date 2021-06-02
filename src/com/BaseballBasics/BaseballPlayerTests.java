@@ -1,3 +1,5 @@
+package com.BaseballBasics;
+
 import com.BaseballPosition.*;
 import com.Exceptions.PlayerNotFoundException;
 import org.junit.jupiter.api.Test;

@@ -1,3 +1,5 @@
+package com.BaseballBasics;
+
 import com.BaseballPosition.*;
 import com.Exceptions.*;
 import com.GenericSports.Team;
@@ -120,15 +122,15 @@ public class BaseballTeam extends Team {
     }
 
     /**
-     * Method to add an existing BaseballPlayer object to the
+     * Method to add an existing com.BaseballBasics.BaseballPlayer object to the
      * roster
      *
-     * @param player - BaseballPlayer object to add to the roster
+     * @param player - com.BaseballBasics.BaseballPlayer object to add to the roster
      */
     public void addPlayer(BaseballPlayer player) {roster.add(player);}
 
     /**
-     * Method to generate and add a new BaseballPlayer object
+     * Method to generate and add a new com.BaseballBasics.BaseballPlayer object
      * to the roster given the new player's information
      *
      * @param first_name - given first name for the new player
@@ -142,12 +144,12 @@ public class BaseballTeam extends Team {
     }
 
     /**
-     * Method to get a specific BaseballPLayer object in the BaseballTeam
+     * Method to get a specific BaseballPLayer object in the com.BaseballBasics.BaseballTeam
      * roster based on a given first and last name
      *
      * @param first_name - given first name
      * @param last_name - given last name
-     * @return - the BaseballPlayer object with the given name
+     * @return - the com.BaseballBasics.BaseballPlayer object with the given name
      * @throws PlayerNotFoundException - if there is no player with the given
      *                                   first and last name
      */
@@ -161,11 +163,11 @@ public class BaseballTeam extends Team {
     }
 
     /**
-     * Method to get a specific BaseballPLayer object in the BaseballTeam
+     * Method to get a specific BaseballPLayer object in the com.BaseballBasics.BaseballTeam
      * roster based on a given jersey number
      *
      * @param number - given jersey number
-     * @return - the BaseballPlayer object with the given jersey number
+     * @return - the com.BaseballBasics.BaseballPlayer object with the given jersey number
      * @throws PlayerNotFoundException - if there is no player with the given
      *                                   jersey number
      */
@@ -178,7 +180,7 @@ public class BaseballTeam extends Team {
     }
 
     /**
-     * Method to remove a specific BaseballPlayer object from the roster
+     * Method to remove a specific com.BaseballBasics.BaseballPlayer object from the roster
      * based on a given first and last name
      *
      * @param first_name - given first name
@@ -192,7 +194,7 @@ public class BaseballTeam extends Team {
     }
 
     /**
-     * Method to remove a specific BaseballPlayer object from the roster
+     * Method to remove a specific com.BaseballBasics.BaseballPlayer object from the roster
      * based on a given jersey number
      *
      * @param number - given jersey number
@@ -204,15 +206,15 @@ public class BaseballTeam extends Team {
     }
 
     /**
-     * Method to add an existing BaseballCoach object to the
+     * Method to add an existing com.BaseballBasics.BaseballCoach object to the
      * assistantCoaches list
      *
-     * @param assistantCoach - existing BaseballCoach object
+     * @param assistantCoach - existing com.BaseballBasics.BaseballCoach object
      */
     public void addAssistantCoach(BaseballCoach assistantCoach) {assistantCoaches.add(assistantCoach);}
 
     /**
-     * Method to generate and add a new BaseballCoach object
+     * Method to generate and add a new com.BaseballBasics.BaseballCoach object
      * to the assistantCoaches list given the coach's information
      *
      * @param first_name - given coach's first name
@@ -224,12 +226,12 @@ public class BaseballTeam extends Team {
     }
 
     /**
-     * Method to get a specific BaseballCoach object from the assistantCoaches
+     * Method to get a specific com.BaseballBasics.BaseballCoach object from the assistantCoaches
      * list from a given first and last name
      *
      * @param first_name - given first name
      * @param last_name - given last name
-     * @return - desired BaseballCoach object
+     * @return - desired com.BaseballBasics.BaseballCoach object
      * @throws CoachNotFoundException - if there is no coach on the team
      */
     public BaseballCoach getCoach(String first_name, String last_name) throws CoachNotFoundException{
@@ -246,7 +248,7 @@ public class BaseballTeam extends Team {
     }
 
     /**
-     * Method to remove a specific BaseballCoach object from the assistantCoaches
+     * Method to remove a specific com.BaseballBasics.BaseballCoach object from the assistantCoaches
      * list based on a given first and last name
      *
      * @param first_name - given first name
